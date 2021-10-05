@@ -19,7 +19,9 @@
 ペットを飼うとき
 
 ## 設計書
-
+ER図: https://drive.google.com/file/d/1TUJceGeIh-2hYQNTNCxN5lAyGx5Z9cGM/view?usp=sharing
+テーブル定義書: https://docs.google.com/spreadsheets/d/1WzPanK0G52pT0Pcxu6ECz4DtuOawXg19g7Jv6VafurA/edit?usp=sharing
+アプリケーション詳細設計: https://docs.google.com/spreadsheets/d/1upDGgjnHAXWiDV8LQSsptnRxY9QBi1ei5kHRdcxUc8k/edit?usp=sharing
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1nl_omUHp333NGep4ELAWfO9DDYgZmx3bPDpP8euqSGU/edit?usp=sharing
