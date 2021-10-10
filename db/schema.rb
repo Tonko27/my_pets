@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_10_10_065212) do
     t.string "nickname"
     t.string "name"
     t.string "postalcode"
-    t.integer "prefecture"
+    t.integer "prefecture_id"
     t.string "city"
     t.string "building"
     t.string "phone"

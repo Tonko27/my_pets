@@ -38,7 +38,7 @@
   
   <div class="field">
     <%= f.label :prefecture %><br />
-    <%= f.text_field :prefecture, autofocus: true %>
+    <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "---"}, {class: ""} %>
   </div>
   
   <div class="field">
