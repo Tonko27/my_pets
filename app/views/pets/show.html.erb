@@ -1,1 +1,13 @@
 ペット詳細
+<div>
+  <p>画像<%= attachment_image_tag @pet, :image, format: 'jpeg', size: "100x100" %></p>
+  <p>性別<%= @pet.gender.name %></p>
+  <p>カテゴリー<%= @pet.category.name %></p>
+  <p>品種<%= @pet.breed %></p>
+  <p>年齢<%= @pet.age.name %></p>
+  <p>性格<%= @pet.character %></p>
+  <p>経緯<%= @pet.reason %></p>
+</div>
+
+<%= link_to "編集", edit_pet_path(@pet) %>
+<%= link_to "削除", pet_path(@pet), method: :delete %>
