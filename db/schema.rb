@@ -35,10 +35,10 @@ ActiveRecord::Schema.define(version: 2021_10_10_065212) do
   create_table "pets", force: :cascade do |t|
     t.integer "customer_id"
     t.integer "image_id"
-    t.integer "gender"
-    t.integer "type"
+    t.integer "gender_id"
+    t.integer "category_id"
     t.string "breed"
-    t.integer "age"
+    t.integer "age_id"
     t.text "character"
     t.text "reason"
     t.datetime "created_at", null: false

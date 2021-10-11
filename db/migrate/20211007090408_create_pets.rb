@@ -3,10 +3,10 @@ class CreatePets < ActiveRecord::Migration[5.2]
     create_table :pets do |t|
       t.integer :customer_id
       t.integer :image_id
-      t.integer :gender
-      t.integer :type
+      t.integer :gender_id
+      t.integer :category_id
       t.string :breed
-      t.integer :age
+      t.integer :age_id
       t.text :character
       t.text :reason
       t.timestamps
