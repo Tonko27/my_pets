@@ -1,0 +1,10 @@
+<h2>ペット編集</h2>
+<%= form_with model:@pet, url: pet_path, local:true do |f| %>
+  <h4>画像</h4>
+    <%= f.attachment_field :image %>
+  <h4>性格</h4>
+    <%= f.text_area :character %>
+  <h4>経緯</h4>
+    <%= f.text_area :reason %>
+  <%= f.submit '変更を保存', class: 'btn btn-dark' %>
+<% end %>
