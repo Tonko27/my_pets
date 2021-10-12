@@ -16,6 +16,7 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    @pet_comment = PetComment.new#詳細画面からコメント入力
   end
 
   def edit
