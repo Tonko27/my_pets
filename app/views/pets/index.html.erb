@@ -7,5 +7,6 @@
   <p>年齢<%= pet.age.name %></p>
   <p>性格<%= pet.character %></p>
   <p>経緯<%= pet.reason %></p>
+  <p><%= link_to "#{pet.pet_comments.count} コメント", pet_path(pet.id) %></p>
 </div>
 <% end %>

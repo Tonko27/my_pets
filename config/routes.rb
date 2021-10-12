@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :customers, only: [:show, :edit, :update]
   resources :pets do
     resources :favorites, only: [:create, :destroy]
-    resources :pets_comments, only: [:create, :destroy]
+    resources :pet_comments, only: [:create, :destroy]
   end
 
 end
