@@ -10,3 +10,4 @@
   <p><%= link_to "#{pet.pet_comments.count} コメント", pet_path(pet.id) %></p>
 </div>
 <% end %>
+<%= paginate @pet %><!--ページング-->

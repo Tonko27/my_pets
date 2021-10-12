@@ -30,3 +30,17 @@
   <%= f.submit "送信する" %>
 <% end %>
 </div>
+<!--お気に入り機能-->
+<% if @pet.favorited_by?(current_customer) %><!--お気に入りにログイン会員が含まれている場合-->
+    <p>
+      <%= link_to pet_favorites_path(@pet), method: :delete do %>
+        ♥<%= @pet.favorites.count %> いいね
+      <% end %>
+    </p>
+    <% else %><!--お気に入りにログイン会員が含まれていない場合-->
+    <p>
+      <%= link_to pet_favorites_path(@pet), method: :post do %>
+        ♡<%= @pet.favorites.count %> いいね
+      <% end %>
+    </p>
+  <% end %>
