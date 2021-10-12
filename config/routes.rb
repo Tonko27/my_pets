@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'homes#top'
   get '/about',to: 'homes#about'
   get '/search', to: 'searches#search'
-  resources :customers
+  resources :customers, only: [:show, :edit, :update]
   resources :pets do
     resources :favorites, only: [:create, :destroy]
     resources :pets_comments, only: [:create, :destroy]
