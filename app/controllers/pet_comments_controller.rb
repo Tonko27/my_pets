@@ -1,7 +1,7 @@
 class PetCommentsController < ApplicationController
   def create
     pet = Pet.find(params[:pet_id])
-    comment = current_customer.pet_comments.new(pet_comment_params)
+    comment = current_customer.pet_comments.new(pet_comment_params)#ログインしている会員IDでコメント投稿
     comment.pet_id = pet.id
     comment.save
     redirect_to pet_path(pet)

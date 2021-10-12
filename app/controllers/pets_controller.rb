@@ -37,7 +37,7 @@ class PetsController < ApplicationController
 
   private
 
-  def pet_params
+  def pet_params#active_hash使用のため一部カラムは"_id"表示
     params.require(:pet).permit(:image, :gender_id, :category_id, :breed, :age_id, :character, :reason)
   end
 
