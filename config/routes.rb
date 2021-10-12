@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/search', to: 'searches#search'
   resources :customers, only: [:show, :edit, :update]
   resources :pets do
-    resources :favorites, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
     resources :pet_comments, only: [:create, :destroy]
   end
 

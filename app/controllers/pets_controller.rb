@@ -11,7 +11,7 @@ class PetsController < ApplicationController
   end
 
   def index
-    @pet = Pet.all
+    @pet = Pet.page(params[:page]).reverse_order#ページング機能
   end
 
   def show

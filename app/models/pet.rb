@@ -9,5 +9,10 @@ class Pet < ApplicationRecord
   belongs_to_active_hash :age
   
   has_many :pet_comments, dependent: :destroy#ペットコメントモデルに紐づけ
+  has_many :favorites, dependent: :destroy#お気に入りモデルに紐づけ
+
+  def favorited_by?(customer)#お気に入りにログイン会員が含まれているか判定するメソッド
+    favorites.where(customer_id: customer.id).exists?
+  end
 
 end
