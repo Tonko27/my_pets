@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'homes#top'
   get '/about',to: 'homes#about'
   get '/search', to: 'searches#search'
+  resources :notifications, only: :index
   resources :customers, only: [:show, :edit, :update]
   resources :pets do
     resource :favorites, only: [:create, :destroy]

@@ -3,6 +3,7 @@ class FavoritesController < ApplicationController
     pet = Pet.find(params[:pet_id])
     favorite = current_customer.favorites.new(pet_id: pet.id)
     favorite.save
+    pet.create_notification_favorite!(current_customer)
     redirect_to pet_path(pet)
   end
 
