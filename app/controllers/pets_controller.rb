@@ -1,4 +1,5 @@
 class PetsController < ApplicationController
+  before_action :set_q,only: [:index,:search]
   def new
     @pet = Pet.new
   end
@@ -35,10 +36,18 @@ class PetsController < ApplicationController
     redirect_to pets_path
   end
 
+  def search
+    @results = @q.result
+  end
+
   private
 
   def pet_params#active_hash使用のため一部カラムは"_id"表示
     params.require(:pet).permit(:image, :gender_id, :category_id, :breed, :age_id, :character, :reason)
+  end
+
+  def set_q
+    @q = Pet.ransack(params[:q])
   end
 
 end
