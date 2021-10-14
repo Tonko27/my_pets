@@ -9,7 +9,7 @@ module NotificationsHelper
     when "favorite" then
       "#{visitor}が#{your_pet}にいいね！しました"
     when "pet_comment" then
-      @pet_comment=PetComment.find_by(id:notification.pet_comment_id)&.content
+      @pet_comment=PetComment.find_by(id:notification.pet_comment_id)&.comment
       "#{visitor}が#{your_pet}にコメントしました"
   end
   end
