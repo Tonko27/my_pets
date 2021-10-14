@@ -1,6 +1,9 @@
 class PetComment < ApplicationRecord
   belongs_to :customer#会員モデルに紐づけ
   belongs_to :pet#ペットモデルに紐づけ
-  
-  has_many :notifications, dependent: :destroy
+
+  has_many :notifications, dependent: :destroy#通知機能
+
 end
+
+
