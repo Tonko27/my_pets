@@ -1,6 +1,8 @@
 <h2>ペット編集</h2>
 <%= form_with model:@pet, url: pet_path, local:true do |f| %>
   <h4>画像</h4>
+    <%= attachment_image_tag @pet, :image, :fill, 60, 60, fallback: "no_image.jpg"%>
+    <label for="inputImage">Image</label>
     <%= f.attachment_field :image %>
   <h4>性格</h4>
     <%= f.text_area :character %>

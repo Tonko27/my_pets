@@ -8,10 +8,10 @@
   <p>性格<%= @pet.character %></p>
   <p>経緯<%= @pet.reason %></p>
 </div>
-
+<% if @pet.id == current_customer.id %>
 <%= link_to "編集", edit_pet_path(@pet) %>
 <%= link_to "削除", pet_path(@pet), method: :delete %>
-
+<% end %>
 <div><!--コメント数、コメント内容-->
 <p>コメント件数：<%= @pet.pet_comments.count %></p>
 <% @pet.pet_comments.each do |pet_comment| %>
