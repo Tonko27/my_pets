@@ -8,3 +8,7 @@
   <p>建物<%= @customer.building %></p>
   <p>電話<%= @customer.phone %></p>
 </div>
+
+<% if @customer.id == current_customer.id %>
+    <p><%= link_to "プロフィール編集", edit_customer_registration_path(@customer) %></p>
+  <% end %>

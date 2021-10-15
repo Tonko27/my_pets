@@ -38,8 +38,11 @@ class Customers::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
-
+   protected
+  def after_update_path_for(resource)
+    # 自分で設定した「マイページ」へのパス
+    customer_path(current_customer)
+  end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])

@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2021_10_12_074057) do
 
   create_table "pets", force: :cascade do |t|
     t.integer "customer_id"
-    t.integer "image_id"
+    t.string "image_id"
     t.integer "gender_id"
     t.integer "category_id"
     t.string "breed"
