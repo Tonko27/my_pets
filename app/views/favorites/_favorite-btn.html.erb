@@ -1,0 +1,14 @@
+<!--お気に入り機能-->
+<% if pet.favorited_by?(current_customer) %><!--お気に入りにログイン会員が含まれている場合-->
+    <p>
+      <%= link_to pet.favorites.count, pet_favorites_path(pet), method: :delete, remote: true, class: "fas fa-heart heart_red" %>
+        ♥<%#= pet.favorites.count %> いいね
+      <%# end %>
+    </p>
+    <% else %><!--お気に入りにログイン会員が含まれていない場合-->
+    <p>
+      <%= link_to pet.favorites.count, pet_favorites_path(pet), method: :post, remote: true, class: "fas fa-heart heart_red" %>
+        ♡<%#= pet.favorites.count %> いいね
+      <%# end %>
+    </p>
+  <% end %>
