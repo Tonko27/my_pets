@@ -1,5 +1,6 @@
 class PetsController < ApplicationController
   before_action :set_q,only: [:index,:search]
+
   def new
     @pet = Pet.new
   end

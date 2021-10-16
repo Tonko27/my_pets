@@ -11,6 +11,8 @@ class Pet < ApplicationRecord
   has_many :pet_comments, dependent: :destroy# コメント機能
   has_many :favorites, dependent: :destroy# お気に入り機能
 
+
+
   def favorited_by?(customer)# お気に入りにログイン会員が含まれているか判定するメソッド
     favorites.where(customer_id: customer.id).exists?
   end
@@ -34,7 +36,7 @@ class Pet < ApplicationRecord
       notification.save if notification.valid?
     end
   end
-  
+
   def create_notification_pet_comment!(current_customer, pet_comment_id)# 通知機能メソッド（コメント）
     # 自分以外にコメントしている人をすべて取得し、全員に通知を送る
     temp_ids = PetComment.select(:customer_id).where(pet_id: id).where.not(customer_id: current_customer.id).distinct
