@@ -15,18 +15,19 @@
 </div>
 <div class="row">
 <% @pet.each do |pet| %>
-<div class="col-md-4">
-  <p>画像<%= attachment_image_tag pet, :image, format: 'jpeg', size: "100x100" %></p>
-  <p>性別<%= pet.gender.name %></p>
-  <p>カテゴリー<%= pet.category.name %></p>
-  <p>品種<%= pet.breed %></p>
-  <p>年齢<%= pet.age.name %></p>
-  <p>性格<%= pet.character %></p>
-  <p>経緯<%= pet.reason %></p>
-  <p><%= link_to "#{pet.pet_comments.count} コメント", pet_path(pet.id) %></p>
+<div class="card" style="width: 18rem;">
+  <%= attachment_image_tag pet, :image, format: 'jpeg', size: "250x250", class:"card-img-top" %>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><%= pet.category.name %></li>
+      <li class="list-group-item"><%= pet.gender.name %></li>
+      <li class="list-group-item"><%= pet.breed %></li>
+      <li class="list-group-item"><%= pet.age.name %></li>
+    </ul>
+  <div class="card-body">
+    <%= link_to  "詳しく見る", pet_path(pet.id), class:"btn btn-secondary btn-sm" %>
+  </div>
 </div>
 <% end %>
 </div>
 <%= paginate @pet %><!--ページング-->
 </div>
-
