@@ -20,10 +20,11 @@
 //= require_tree .
 
 /* global $*/
-$(function() {
+
+$(document).on('turbolinks:load', function() { //slick機能
     $('.slider').slick({
         dots: true,
         autoplay: true,
-        autoplaySpeed: 500
+        autoplaySpeed: 1000
     });
 });

@@ -1,46 +1,49 @@
 <div class="container">
-  <div class="row-sm">
-    <table class="table table-bordered">
-      <thead>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">ニックネーム</th>
-          <td><%= @customer.nickname %></td>
-        </tr>
-        <tr>
-          <th scope="row">氏名</th>
-          <td><%= @customer.name %></td>
-        </tr>
-        <tr>
-          <th scope="row">メールアドレス</th>
-          <td><%= @customer.email %></td>
-        </tr>
-        <tr>
-          <th scope="row">郵便番号</th>
-          <td><%= @customer.postalcode %></td>
-        </tr>
-        <tr>
-          <th scope="row">都道府県</th>
-          <td><%= @customer.prefecture.name %></td>
-        </tr>
-        <tr>
-          <th scope="row">市町村</th>
-          <td><%= @customer.city %></td>
-        </tr>
-        <tr>
-          <th scope="row">番地・建物名</th>
-          <td><%= @customer.building %></td>
-        </tr>
-        <tr>
-          <th scope="row">電話番号</th>
-          <td><%= @customer.phone %></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <div class="row card w-100">
+        <table class="table table-borderless">
+          <thead>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" style="width: 40%">ニックネーム</th>
+              <td><%= @customer.nickname %></td>
+            </tr>
+            <tr>
+              <th scope="row">氏名</th>
+              <td><%= @customer.name %></td>
+            </tr>
+            <tr>
+              <th scope="row">メールアドレス</th>
+              <td><%= @customer.email %></td>
+            </tr>
+            <tr>
+              <th scope="row">郵便番号</th>
+              <td><%= @customer.postalcode %></td>
+            </tr>
+            <tr>
+              <th scope="row">都道府県</th>
+              <td><%= @customer.prefecture.name %></td>
+            </tr>
+            <tr>
+              <th scope="row">市町村</th>
+              <td><%= @customer.city %></td>
+            </tr>
+            <tr>
+              <th scope="row">番地・建物名</th>
+              <td><%= @customer.building %></td>
+            </tr>
+            <tr>
+              <th scope="row">電話番号</th>
+              <td><%= @customer.phone %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <% if @customer.id == current_customer.id %>
+      <div class="row w-100 card customer-button">
+        <%= link_to "プロフィール編集", edit_customer_registration_path(@customer), class:"btn btn-secondary customer-button" %>
+        <%= link_to 'ペットを登録する', new_pet_path, class:"btn btn-secondary customer-button" %>
+      </div>
+      <% end %>
 </div>
 
-<% if @customer.id == current_customer.id %>
-    <p><%= link_to "プロフィール編集", edit_customer_registration_path(@customer) %></p>
-  <% end %>

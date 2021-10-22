@@ -8,12 +8,15 @@ class PetsController < ApplicationController
   def create
     @pet = Pet.new(pet_params)
     @pet.customer_id = current_customer.id
-    @pet.save
+    if @pet.save
     redirect_to pet_path(@pet.id)
+    else
+      render :new
+    end
   end
 
   def index
-    @pet = Pet.page(params[:page]).reverse_order#ページング機能
+    @pet = Pet.page(params[:page]).per(4).order('updated_at DESC')#ページング機能
   end
 
   def show

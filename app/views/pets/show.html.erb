@@ -1,56 +1,52 @@
 <div class="container">
-  <div class="row mt-5">
-    <div class="col-5">
-      <%= attachment_image_tag @pet, :image, format: 'jpeg', size: "300x300" %>
-    <div class="favorite-btn"><!--非同期通信（お気に入りボタン）-->
-      <%= render "favorites/favorite-btn", pet: @pet %>
+    <div class="card" style="width: 100%;">
+      <div class="row">
+        <div class="col-4 m-3 pet-show-left">
+          <%= attachment_image_tag @pet, :image, format: 'jpeg' %>
+            <div class="favorite-btn"><!--非同期通信（お気に入りボタン）-->
+            <%= render "favorites/favorite-btn", pet: @pet %>
+            </div>
+            <%# if @pet.id == current_customer.id %>
+            <%= link_to "編集", edit_pet_path(@pet), class:"btn btn-secondary w-50" %><br>
+            <%= link_to "削除", pet_path(@pet), method: :delete, class:"btn btn-danger w-50" %>
+            <%# end %>
+        </div>
+        <div class="col m-3">
+          <table class="table table-borderless">
+            <tbody>
+              <tr>
+                <th>投稿者</th>
+                <td><%= @pet.customer.name %></td>
+              </tr>
+              <tr>
+                <th>性別</th>
+                <td><%= @pet.gender.name %></td>
+              </tr>
+              <tr>
+                <th>カテゴリー</th>
+                <td><%= @pet.category.name %></td>
+              </tr>
+              <tr>
+                <th>品種</th>
+                <td><%= @pet.breed %></td>
+              </tr>
+              <tr>
+                <th>年齢</th>
+                <td><%= @pet.age.name %></td>
+              </tr>
+              <tr>
+                <th>性格</th>
+                <td><%= @pet.character %></td>
+              </tr>
+              <tr>
+                <th>経緯</th>
+                <td><%= @pet.reason %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
-    </div>
-    <div class="col-5">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">投稿者</th>
-            <td><%= @pet.customer.name %></td>
-          </tr>
-          <tr>
-            <th scope="row">性別</th>
-            <td><%= @pet.gender.name %></td>
-          </tr>
-          <tr>
-            <th scope="row">カテゴリー</th>
-            <td><%= @pet.category.name %></td>
-          </tr>
-          <tr>
-            <th scope="row">品種</th>
-            <td><%= @pet.breed %></td>
-          </tr>
-          <tr>
-            <th scope="row">年齢</th>
-            <td><%= @pet.age.name %></td>
-          </tr>
-          <tr>
-            <th scope="row">性格</th>
-            <td><%= @pet.character %></td>
-          </tr>
-          <tr>
-            <th scope="row">経緯</th>
-            <td><%= @pet.reason %></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  <div class="col-2">
-    <%# if @pet.id == current_customer.id %>
-    <%= link_to "編集", edit_pet_path(@pet), class:"btn btn-secondary" %><br>
-    <%= link_to "削除", pet_path(@pet), method: :delete, class:"btn btn-secondary" %>
-    <%# end %>
-  </div>
-  </div>
 
   <div class="row-12">
     <div><!--コメント入力フォーム-->
@@ -63,5 +59,6 @@
         <%= render "pet_comments/pet_comment", pet: @pet %>
       </div>
     </div>
-
   </div>
+</div>
+

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/about',to: 'homes#about'
   #get '/search', to: 'searches#search'
   get '/pets/search',  to: 'pets#search'
-  resources :notifications, only: :index
+  resources :notifications, only: [:index, :destroy]
   resources :customers, only: [:show]
   resources :pets do
     resource :favorites, only: [:create, :destroy]

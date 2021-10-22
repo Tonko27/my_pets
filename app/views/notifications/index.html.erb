@@ -1,12 +1,13 @@
 <div class="container">
-  <h3 class="text-center">通知</h3>
-    <div class="row">
-      <% if @notifications.exists? %><%#表示の条件分岐はnotification_helperに記述%>
-        <div class="customer-index">
+  <div class="row">
+      <% if @notifications.exists? %><!--通知がある場合-->
+        <div>
           <%= render @notifications %>
         </div>
-      <% else %>
-        <p>通知はありません</p>
-    <% end %>
+      <% else %><!--通知がない場合-->
+       <div class="no-notification">
+         <span>通知はありません</span>
+        </div>
+      <% end %>
   </div>
 </div>
