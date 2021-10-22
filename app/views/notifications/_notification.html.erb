@@ -1,10 +1,18 @@
-<% visitor=notification.visitor %>
+<% visitor=notification.visitor %><!--notification_helperに必要な記述-->
 <% pet=notification.pet%>
-
-<div class="user-view clearfix ">
-  <%== notification_form(notification) %><span class="moderate-font"><%= " (#{time_ago_in_words(notification.created_at)}前)" %></span>
-  <br>
-  <% if !@pet_comment.nil? %>
-    <p class="moderate-font"><%= @pet_comment %></p>
+<div class="card">
+  <div class="card-header">
+    <div class="user-view clearfix ">
+      <%== notification_form(notification) %><!--通知内容（詳細はnotification_helper記述）-->
+      <span><%= " (#{time_ago_in_words(notification.created_at)}前)" %></span><!--通知された時間-->
+      <%= link_to notification_path(notification), method: :delete do %><!--削除ボタン-->
+        <i class="fas fa-trash" style="color: black;">削除</i>
+      <% end %>
+    </div>
+  </div>
+  <% if !@pet_comment.nil? %><!--コメントがあった場合はコメント内容も表示する-->
+    <div class="card-body">
+      <p><%= @pet_comment %></p>
+    </div>
   <% end %>
 </div>

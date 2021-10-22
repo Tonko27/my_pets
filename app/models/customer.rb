@@ -13,4 +13,13 @@ class Customer < ApplicationRecord
 
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy# 通知機能
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
+
+  validates :email, presence: true
+  validates :password, presence: true
+  validates :nickname, presence: true
+  validates :name, presence: true
+  validates :postalcode, presence: true
+  validates :prefecture_id, presence: true
+  validates :phone, presence: true
+
 end

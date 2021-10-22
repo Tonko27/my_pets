@@ -11,6 +11,11 @@ class Pet < ApplicationRecord
   has_many :pet_comments, dependent: :destroy# コメント機能
   has_many :favorites, dependent: :destroy# お気に入り機能
 
+  validates :image, presence: true
+  validates :gender_id, presence: true
+  validates :category_id, presence: true
+  validates :breed, presence: true
+  validates :age_id, presence: true
 
 
   def favorited_by?(customer)# お気に入りにログイン会員が含まれているか判定するメソッド
