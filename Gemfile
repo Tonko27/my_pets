@@ -77,6 +77,11 @@ gem 'kaminari','~> 1.2.1'#ページング
 
 gem 'ransack'#検索機能
 
-gem 'rails-i18n', '~> 5.1'
+gem 'rails-i18n', '~> 5.1'#devise日本語化
 
-gem 'devise-i18n'
+gem 'devise-i18n'#devise日本語化
+
+gem 'dotenv-rails'#MySQL使用
+group :production do
+  gem 'mysql2'
+end
