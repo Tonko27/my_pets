@@ -25,7 +25,7 @@
   body {
   // background-color: #797979;
   background-size: cover;
-  background-image: url("background.jpg");
+  background-image: image-url("background.jpg");
   height:500px;
   min-width:100%;
 
@@ -116,13 +116,13 @@ search {
 
 
 .card {
-  background-image: url("wood.jpg");
+  background-image: image-url("wood.jpg");
   box-shadow: 0 10px 25px 0 black;
   padding: 10px;
 }
 
 .table, .card-body, {
-    background-image: url("paper.jpg");
+    background-image: image-url("paper.jpg");
     background-size: 250%;
     background-position: center;
     border-radius: 1%;
@@ -133,7 +133,7 @@ th{
 }
 
 img {
-    background-image: url("paper2.jpg");
+    background-image: image-url("paper2.jpg");
     background-size: 100px;
     background-position: center;
     width:  300px;
@@ -201,7 +201,7 @@ i {;
 }
 
 .icon-top {
-  background-image: url("iron.jpg");
+  background-image: image-url("iron.jpg");
     background-size: 500px;
     background-position: center;
     width:  300px;
@@ -220,7 +220,7 @@ header {
   // padding: 5px 0;
   // margin: 10% 0% auto;
   // text-align: center;
-  background-image: url("wood.jpg");
+  background-image: image-url("wood.jpg");
   box-shadow: 0 10px 25px 0 black;
   // background: gray;
     display: flex;
