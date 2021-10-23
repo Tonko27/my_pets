@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_10_065212) do
+ActiveRecord::Schema.define(version: 2021_10_12_074057) do
 
   create_table "customers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,13 +32,43 @@ ActiveRecord::Schema.define(version: 2021_10_10_065212) do
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "pet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer "visitor_id", null: false
+    t.integer "visited_id", null: false
+    t.integer "pet_id"
+    t.integer "pet_comment_id"
+    t.string "action", default: "", null: false
+    t.boolean "checked", default: false, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pet_comment_id"], name: "index_notifications_on_pet_comment_id"
+    t.index ["pet_id"], name: "index_notifications_on_pet_id"
+    t.index ["visited_id"], name: "index_notifications_on_visited_id"
+    t.index ["visitor_id"], name: "index_notifications_on_visitor_id"
+  end
+
+  create_table "pet_comments", force: :cascade do |t|
+    t.text "comment"
+    t.integer "customer_id"
+    t.integer "pet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pets", force: :cascade do |t|
     t.integer "customer_id"
-    t.integer "image_id"
-    t.integer "gender"
-    t.integer "type"
+    t.string "image_id"
+    t.integer "gender_id"
+    t.integer "category_id"
     t.string "breed"
-    t.integer "age"
+    t.integer "age_id"
     t.text "character"
     t.text "reason"
     t.datetime "created_at", null: false

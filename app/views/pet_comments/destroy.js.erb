@@ -1,0 +1,3 @@
+$("#pet_<%= @pet.id %> .comments-count").html("コメント数: <%= @pet.pet_comments.count %>");
+$(".pet_comments").html("<%= j(render 'pet_comments/pet_comment', pet: @pet) %>");
+$("#pet_comment_comment").val("");

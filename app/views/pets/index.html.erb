@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="row">
+    <%= render "search/search_form", q: @q %>
+  </div>
+  <div class="row">
+    <%= render "pets/index", pet: @pet %>
+  </div>
+<div class="paginate"><%= paginate @pet %></div><!--ページング-->
+</div>

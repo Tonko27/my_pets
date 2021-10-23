@@ -1,3 +1,30 @@
 // Place all the styles related to the customers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.table {
+  margin: 20px auto;
+}
+.w-40 { //ペット詳細画面のボタン配置
+	margin: 10px auto;
+	padding: 10px 70px;
+	font-size: 100%;
+}
+
+.customer-button{
+  margin: 1px 0px;
+}
+
+
+.no-notification{
+    position: relative;
+    background: #fff0cd;
+    box-shadow: 0px 0px 0px 5px #fff0cd;
+    border: dashed 2px white;
+    padding: 10px 70px;
+    color: #454545;
+    margin: 100px auto;
+    border-radius:15px;
+    font-size: 150%;
+}
+
