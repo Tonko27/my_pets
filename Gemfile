@@ -76,3 +76,7 @@ gem 'font-awesome-sass', '~> 5.13'#アイコン表示
 gem 'kaminari','~> 1.2.1'#ページング
 
 gem 'ransack'#検索機能
+
+gem 'rails-i18n', '~> 5.1'
+
+gem 'devise-i18n'
