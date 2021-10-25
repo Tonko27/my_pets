@@ -5,5 +5,7 @@
   <div class="row">
     <%= render "pets/index", pet: @pet %>
   </div>
-<div class="paginate"><%= paginate @pet %></div><!--ページング-->
+  <div class="text-center">
+    <div class="paginate justify-content-center"><%= paginate @pet %></div><!--ページング-->
+  </div>
 </div>

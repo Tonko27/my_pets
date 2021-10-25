@@ -16,18 +16,19 @@
   @import "bootstrap";
 
   /* ブラウザがそれぞれ持っているCSSをリセットするための記述 */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  body {
-  // background-color: #797979;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
   background-size: cover;
   background-image: image-url("background.jpg");
-  height:500px;
-  min-width:100%;
 
   font-family: 'MS Gothic';
   font-size: 18px;
@@ -35,49 +36,11 @@
   color: #333;
   letter-spacing: 1.5px;
   line-height: 1.75;
-  text-shadow: 1px 1px 2px #808080;
-  }
+
+}
 
 
-
-//select::-ms-expand {IE矢印無効
-// 	display: none;
-// }
-// select {
-// 	-webkit-appearance: none; //各ブラウザのselect要素の標準CSSをリセット
-// 	-moz-appearance: none; //各ブラウザのselect要素の標準CSSをリセット
-// 	appearance: none; //各ブラウザのselect要素の標準CSSをリセット
-// 	margin-bottom: 20px;
-// 	padding: 7px 30px 7px 10px;
-// 	font-size: 93%;
-// 	line-height: 1.1em;
-// 	border-radius: 5px;
-// 	border: none;
-// 	background-repeat: no-repeat;
-// 	background-size: 12px 10px;
-// 	background-position: right 10px center;
-// 	background-color: #bddfff;
-// }
-
-  // .sbox {矢印レイアウト
-  //       position: relative;
-  //     }
-
-  //   .sbox::after {
-  //     content: "";
-  //     position: absolute;
-  //     top: 0;
-  //     right: 10px;
-  //     width: 30px;
-  //     height: 30px;
-  //     background-image: url(down.png);
-  //     background-size: 60%;
-  //     background-repeat: no-repeat;
-  //     background-position: right center;
-  //     pointer-events: none;
-  //   }
-
-//   .form-control, .input {
+//   .form-control, .input {入力フォーム
 // 	-webkit-appearance: none; //各ブラウザのselect要素の標準CSSをリセット
 // 	-moz-appearance: none; //各ブラウザのselect要素の標準CSSをリセット
 // 	appearance: none; //各ブラウザのselect要素の標準CSSをリセット
@@ -110,15 +73,38 @@ search {
     border-radius: 9px;
 }
 
+a {
+  color: white;
+  text-decoration: none!important;
+}
+
+a:hover {
+  color: darkgreen;
+  text-decoration: underline;
+}
+
+
 .container {
   margin-top: 3rem;
 }
 
+.row {
+  padding: 0px 0px 20px 0px;
+}
+
+h2 {
+  color: white;
+  text-shadow:  black 1px 1px 0px, black -1px 1px 0px, black 1px -1px 0px, black -1px -1px 0px;
+  display: inline-block;
+  margin: 0px 10px;
+}
 
 .card {
   background-image: image-url("wood.jpg");
   box-shadow: 0 10px 25px 0 black;
   padding: 10px;
+  width: 100%;
+  table-layout: fixed;
 }
 
 .table, .card-body, {
@@ -132,7 +118,13 @@ th{
   width: 40%;
 }
 
-img {
+.btn {
+  font-weight: bolder;
+  font-size: 1rem;
+
+}
+
+img:not(.logo) {
     background-image: image-url("paper2.jpg");
     background-size: 100px;
     background-position: center;
@@ -142,17 +134,21 @@ img {
     margin: 0 auto;
     border-radius: 1%;
     background-position: left top;
-    // background-clip: padding-box;
     border: 20px solid rgba(252,226,255,0);
     box-shadow: 0 10px 25px 0 black;
 }
+//ロゴ
+.logo {
+  width:  100px;
+  height: 100px;
+  margin: -15px 0px 0px 50px;
+}
+.logp-box {
 
-
-.pet-show-left{
-  margin: auto;
 }
 
 
+// 通知アイコン
 .page-header{
     position: relative;
     background: #fff0cd;
@@ -177,7 +173,7 @@ img {
     margin: 0;
     padding: 0;
 }
-
+// アバウトページ
 .about-img {
   position: absolute;
   margin: 0px 0px 0px 20px;
@@ -189,95 +185,68 @@ img {
   margin: 0px 20px 0px 200px;
   transform: rotate(-10deg);
 }
-
-.card-text {
- text-align: left;
-}
-
-i {;
+// トップページのリンクボタン
+i {
     width:  250px;
     text-align: center;
     color: white;
 }
-
+// トップページのリンクボタン背景、位置
 .icon-top {
   background-image: image-url("iron.jpg");
-    background-size: 500px;
-    background-position: center;
-    width:  300px;
-    height: 25%;
-    display:block;
-    margin: auto;
-    border-radius: 50%;
-    border: 20px solid rgba(252,226,255,0);
-    box-shadow: 0 10px 25px 0 black;
+  background-size: 500px;
+  background-position: center;
+  width:  300px;
+  height: 25%;
+  display:block;
+  margin: auto;
+  border-radius: 50%;
+  border: 20px solid rgba(252,226,255,0);
+  box-shadow: 0 10px 25px 0 black;
 }
 
-
+// ヘッダー
 header {
-  // background-color: blue;
-  // width: 100%; /* 横幅90% */
-  // padding: 5px 0;
-  // margin: 10% 0% auto;
-  // text-align: center;
   background-image: image-url("wood.jpg");
   box-shadow: 0 10px 25px 0 black;
-  // background: gray;
-    display: flex;
-    padding: 0px 20px;
-    top: 0; /* 上下の固定位置を上から0pxにする */
-    left: 0; /* 左右の固定位置を左から0pxにする */
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  padding: 0px 20px;
+  top: 0; /* 上下の固定位置を上から0pxにする */
+  left: 0; /* 左右の固定位置を左から0pxにする */
+  justify-content: space-between;
+  width: 100%;
 }
-
+//フッター
 footer {
-  background: gray;
-  // bottom: 0; /*下に固定*/
+  position: absolute;/*←絶対位置*/
+  bottom: 0; /*下に固定*/
+  box-shadow: 0 10px 25px 0 black;
   text-align: center;
   color: white;
   width: 100%;
+  background-image: image-url("wood.jpg");
 }
 
-.header-icon-text {
+.wrapper {
+  min-height: 100vh;
   position: relative;
-  color: white;
-// 	float: left;
-  margin: auto;
-	padding: 20px 0px 0px 0px;
-	vertical-align: 20%;
-	font-family: 'fantasy';
-  font-size: 18px;
-  font-weight: bolder;
-  letter-spacing: 1.5px;
-  line-height: 1.75;
-  text-shadow:  black 1px 1px 0px, black -1px 1px 0px, black 1px -1px 0px, black -1px -1px 0px;
+  padding-bottom: 80px;
 }
-// 	.header-icon {
-// 	  position: absolute;
-// 	  margin: auto;
-// 	  padding: auto;
-// 		width: 10px;
-// 		height: 10px;
-// 		background: url(icon.png) center/60px auto no-repeat;
-// 	}
+//ヘッダーリンク
+.navbar-outline {
+  padding: 15px 0px 0px 0px;
+}
 
-  .nav-list {
-    text-align: center;
-  padding: 10px 0;
-  margin: 0 auto;
-	}
-
-	.nav-link {
-	  color: white;
-	  list-style: none;
-    display: inline-block;
-    margin: 0 10px;
-	  float: left;
-	}
-
-	.paginate, .pagination {
-    margin: auto;
-    text-align: center;
-    font-size: 16px;
-  }
+.nav-link {
+  color: white;
+  list-style: none;
+  display: inline-block;
+  float: left;
+}
+//ページング
+.paginate, .pagination {
+  margin: auto;
+  text-align: center;
+  font-size: 16px;
+  justify-content: center;
+}

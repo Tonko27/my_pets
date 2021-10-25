@@ -1,10 +1,10 @@
 <!--お気に入り機能-->
 <% if pet.favorited_by?(current_customer) %><!--お気に入りにログイン会員が含まれている場合-->
-      <%= link_to pet.favorites.count, pet_favorites_path(pet), method: :delete, remote: true, class: "fas fa-heart color-delete w-50" %>
+      <%= link_to pet.favorites.count, pet_favorites_path(pet), method: :delete, remote: true, class: "fas fa-heart favorite-delete" %>
         <%#= pet.favorites.count %>
       <%# end %>
     <% else %><!--お気に入りにログイン会員が含まれていない場合-->
-      <%= link_to pet.favorites.count, pet_favorites_path(pet), method: :post, remote: true, class: "fas fa-heart color-post w-50" %>
+      <%= link_to pet.favorites.count, pet_favorites_path(pet), method: :post, remote: true, class: "fas fa-heart favorite-post" %>
         <%#= pet.favorites.count %>
       <%# end %>
   <% end %>

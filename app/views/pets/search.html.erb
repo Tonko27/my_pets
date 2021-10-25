@@ -1,5 +1,19 @@
-<h1>検索結果</h1>
-<%= render "search/search_results", results: @results %>
+<div class="container">
+  <div class="row">
+    <div class="card w-100 text-center">
+      <div>
+        <h2>検索結果</h2>
+        <span>
+          <%= link_to 'ペット一覧へ戻る', pets_path, class:"btn btn-light" %>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <%= render "search/search_results", results: @results %>
+  </div>
+</div>
+
 
 <%# if @results.length !=0 %><%# 検索結果数で条件分岐 %>
 <!--<%# @results.each do |pet| %>-->

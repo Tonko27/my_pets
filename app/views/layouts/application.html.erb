@@ -16,15 +16,16 @@
   <body>
     <!--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>-->
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script><!--slick機能-->
+    <div class="wrapper">
+      <%= render 'layouts/header' %>
 
-    <%= render 'layouts/header' %>
-
-    <main>
-      <% if flash[:notice] %>
-        <div class="flash mt-2"><%= flash[:notice] %></div>
-      <% end %>
-    <%= yield %>
-    </main>
-    <%= render 'layouts/footer' %>
+      <main>
+        <% if flash[:notice] %>
+          <div class="flash mt-2"><%= flash[:notice] %></div>
+        <% end %>
+      <%= yield %>
+      </main>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>

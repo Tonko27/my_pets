@@ -16,7 +16,7 @@ class PetsController < ApplicationController
   end
 
   def index
-    @pet = Pet.page(params[:page]).per(4).order('updated_at DESC')#ページング機能
+    @pet = Pet.page(params[:page]).per(3).order('updated_at DESC')#ページング機能
   end
 
   def show

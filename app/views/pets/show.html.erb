@@ -1,19 +1,21 @@
 <div class="container">
     <div class="card" style="width: 100%;">
       <div class="row">
-        <div class="col-4 m-3 pet-show-left">
+        <div class="col-4 m-3">
+          <div class="pet-profile">
           <%= attachment_image_tag @pet, :image, format: 'jpeg' %>
             <div class="favorite-btn"><!--非同期通信（お気に入りボタン）-->
-            <%= render "favorites/favorite-btn", pet: @pet %>
+              <%= render "favorites/favorite-btn", pet: @pet %>
             </div>
-            <%# if @pet.id == current_customer.id %>
-            <%= link_to "編集", edit_pet_path(@pet), class:"btn btn-secondary w-50" %><br>
-            <%= link_to "削除", pet_path(@pet), method: :delete, class:"btn btn-danger w-50" %>
-            <%# end %>
+            <% if @pet.customer.id == current_customer.id %>
+              <%= link_to "編集", edit_pet_path(@pet), class:"btn btn-secondary pet-button" %><br>
+              <%= link_to "削除", pet_path(@pet), method: :delete, class:"btn btn-danger pet-button" %>
+            <% end %>
+          </div>
         </div>
         <div class="col m-3">
-          <table class="table table-borderless">
-            <tbody>
+          <table class="table table-borderless pet-profile-table">
+            <!--<tbody>-->
               <tr>
                 <th>投稿者</th>
                 <td><%= @pet.customer.name %></td>
@@ -42,7 +44,7 @@
                 <th>経緯</th>
                 <td><%= @pet.reason %></td>
               </tr>
-            </tbody>
+            <!--</tbody>-->
           </table>
         </div>
       </div>
