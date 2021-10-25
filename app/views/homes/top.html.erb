@@ -1,6 +1,5 @@
 <div class="container">
-  <div class="row">
-    <div class="col-6">
+    <div class="slider-box">
       <ul class="slider">
         <li><img class="slickimage" src="assets/dog.jpg"></li>
         <li><img class="slickimage" src="assets/cat.jpg"></li>
@@ -9,36 +8,39 @@
         <li><img class="slickimage" src="assets/gecko.jpg"></li>
       </ul>
     </div>
-    <div class="col-6">
+    <div class="tb">
       <% if customer_signed_in? %>
-      <div class="icon-top">
+      <span class="icon-top">
         <%= link_to new_pet_path do %>
-        <i class="fas fa-paw fa-2x btn-register">ペット登録</i>
+          <i class="fas fa-paw faa-float animated-hover fa-2x top-btn">ペット登録</i>
         <% end %>
-      </div>
-      <div class="icon-top">
+      </span>
+      <span class="icon-top">
         <%= link_to pets_path do %>
-         <i class="fas fa-paw faa-vertical animated-hoover fa-2x btn-register">ペット閲覧</i>
+          <i class="fas fa-paw faa-float animated-hover fa-2x top-btn">ペット閲覧</i>
         <% end %>
-      </div>
+      </span>
+      <span class="icon-top">
+        <%= link_to destroy_customer_session_path, method: :delete do %>
+          <i class="fas fa-paw faa-float animated-hover fa-2x top-btn">ログアウト</i>
+        <% end %>
+      </span>
       <% else %>
-      <div class="icon-top">
+      <span class="icon-top">
         <%= link_to pets_path do %>
-        <i class="fas fa-paw fa-2x btn-register">ペット閲覧</i>
+          <i class="fas fa-paw fa-2x top-btn">ペット閲覧</i>
         <% end %>
-      </div>
-      <div class="icon-top">
+      </span>
+      <span class="icon-top">
         <%= link_to new_customer_registration_path do %>
-        <i class="fas fa-paw faa-vertical animated-hoover fa-2x btn-register">新規登録</i>
+          <i class="fas fa-paw faa-vertical animated-hoover fa-2x">新規登録</i>
         <% end %>
-       </div>
-      <div class="icon-top padding">
+       </span>
+      <span class="icon-top padding">
         <%= link_to new_customer_session_path do %>
-        <i class="fas fa-paw faa-vertical animated-hoover fa-2x btn-register">ログイン</i>
+          <i class="fas fa-paw faa-vertical animated-hoover fa-2x">ログイン</i>
         <% end %>
-       </div>
+       </span>
       <% end %>
     </div>
-  </div>
-  </div>
 </div>

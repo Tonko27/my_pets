@@ -109,7 +109,7 @@ h2 {
 
 .table, .card-body, {
     background-image: image-url("paper.jpg");
-    background-size: 250%;
+    background-size: 3000px 2000px;
     background-position: center;
     border-radius: 1%;
     box-shadow: 0 10px 25px 0 black;
@@ -124,14 +124,14 @@ th{
 
 }
 
-img:not(.logo) {
+img:not(.logo, .about-img2) {
     background-image: image-url("paper2.jpg");
     background-size: 100px;
     background-position: center;
     width:  300px;
     height: 300px;
     display:block;
-    margin: 0 auto;
+    margin: auto;
     border-radius: 1%;
     background-position: left top;
     border: 20px solid rgba(252,226,255,0);
@@ -184,25 +184,51 @@ img:not(.logo) {
   position: relative;
   margin: 0px 20px 0px 200px;
   transform: rotate(-10deg);
-}
-// トップページのリンクボタン
-i {
-    width:  250px;
-    text-align: center;
-    color: white;
-}
-// トップページのリンクボタン背景、位置
-.icon-top {
-  background-image: image-url("iron.jpg");
-  background-size: 500px;
+  background-image: image-url("paper2.jpg");
+  background-size: 100px;
   background-position: center;
   width:  300px;
-  height: 25%;
+  height: 300px;
   display:block;
-  margin: auto;
-  border-radius: 50%;
+  border-radius: 1%;
+  background-position: left top;
   border: 20px solid rgba(252,226,255,0);
   box-shadow: 0 10px 25px 0 black;
+}
+// トップページのリンクボタン
+// i {
+//     width:  250px;
+//     text-align: center;
+//     color: white;
+// }
+// トップページのリンクボタン背景、位置
+// .icon-top {
+//   background-image: image-url("wood.jpg");
+//   background-size: 500px;
+//   background-position: center;
+//   width:  300px;
+//   height: 25%;
+//   display: block;
+//   margin: auto;
+//   border-radius: 50%;
+//   border: 20px solid rgba(252,226,255,0);
+//   box-shadow: 0 10px 25px 0 black;
+// }
+
+.top-btn {
+  background-image: image-url("wood.jpg");
+  margin: 0px 41px;
+  padding: 20px 0px;
+  width: 280px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px 0 black;
+}
+
+.tb {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
 }
 
 // ヘッダー
@@ -249,4 +275,14 @@ footer {
   text-align: center;
   font-size: 16px;
   justify-content: center;
+}
+//各種ボタン
+button {
+  padding: 10px;
+}
+
+.delete-btn {
+  color: red;
+  float: right;
+  width: 80px;
 }

@@ -23,8 +23,24 @@
 
 $(document).on('turbolinks:load', function() { //slick機能
     $('.slider').slick({
-        dots: true,
-        autoplay: true,
-        autoplaySpeed: 1000
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 2000
     });
 });
+
+function copyToClipboard() {
+    // コピー対象をJavaScript上で変数として定義する
+    var copyTarget = document.getElementById("copyTarget");
+
+    // コピー対象のテキストを選択する
+    copyTarget.select();
+
+    // 選択しているテキストをクリップボードにコピーする
+    document.execCommand("Copy");
+
+    // コピーをお知らせする
+    alert("メールアドレスをコピーしました。飼い主にメールを送りましょう。 : " + copyTarget.value);
+}

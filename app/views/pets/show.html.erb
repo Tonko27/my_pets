@@ -1,24 +1,24 @@
 <div class="container">
-    <div class="card" style="width: 100%;">
-      <div class="row">
-        <div class="col-4 m-3">
-          <div class="pet-profile">
+  <div class="card">
+    <div class="row">
+      <div class="col-4">
+        <div class="pet-profile">
           <%= attachment_image_tag @pet, :image, format: 'jpeg' %>
-            <div class="favorite-btn"><!--非同期通信（お気に入りボタン）-->
-              <%= render "favorites/favorite-btn", pet: @pet %>
-            </div>
-            <% if @pet.customer.id == current_customer.id %>
-              <%= link_to "編集", edit_pet_path(@pet), class:"btn btn-secondary pet-button" %><br>
-              <%= link_to "削除", pet_path(@pet), method: :delete, class:"btn btn-danger pet-button" %>
-            <% end %>
+          <div class="favorite-btn"><!--非同期通信（お気に入りボタン）-->
+            <%= render "favorites/favorite-btn", pet: @pet %>
           </div>
+          <% if @pet.customer.id == current_customer.id %>
+            <%= link_to "編集", edit_pet_path(@pet), class:"btn btn-light pet-button" %><br>
+            <%= link_to "削除", pet_path(@pet), method: :delete, class:"btn btn-danger pet-button" %>
+          <% end %>
         </div>
-        <div class="col m-3">
+      </div>
+        <div class="col-8">
           <table class="table table-borderless pet-profile-table">
             <!--<tbody>-->
               <tr>
                 <th>投稿者</th>
-                <td><%= @pet.customer.name %></td>
+                <td><%= link_to @pet.customer.name, customer_path(@pet.customer.id) %></td>
               </tr>
               <tr>
                 <th>性別</th>
@@ -44,19 +44,19 @@
                 <th>経緯</th>
                 <td><%= @pet.reason %></td>
               </tr>
-            <!--</tbody>-->
           </table>
         </div>
       </div>
     </div>
-
-  <div class="row-12">
-    <div><!--コメント入力フォーム-->
-    <%= render "pet_comments/comment_form", pet: @pet, pet_comment: @pet_comment %>
+    <div class="row m-5"><!--コメント入力フォーム-->
+      <div class="card">
+        <%= render "pet_comments/comment_form", pet: @pet, pet_comment: @pet_comment %>
+      </div>
     </div>
-  </div>
-  <div class="row-12">
-    <div id="pet_<%= @pet.id %>"><!--非同期通信（コメント表示、コメント数）-->
+    <div class="row m-5">
+      <div class="card">
+        <div id="pet_<%= @pet.id %>"><!--非同期通信（コメント表示、コメント数）-->
+      </div>
       <div class="pet_comments">
         <%= render "pet_comments/pet_comment", pet: @pet %>
       </div>

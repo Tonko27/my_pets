@@ -3,18 +3,18 @@
   <nav class="navbar-outline">
     <ul>
       <% if customer_signed_in? %>
-        <li class="nav-link"><%= link_to 'トップページ', root_path, class:"fas fa-paw nav-link" %></li>
-        <li class="nav-link"><%= link_to 'マイページ', customer_path(current_customer.id), class:"fas fa-paw nav-link" %></li>
-        <li class="nav-link"><%= link_to 'ペット一覧', pets_path, class:"fas fa-paw nav-link" %></li>
-        <li class="nav-link"><%= link_to '通知一覧', notifications_path(current_customer.id), class:"fas fa-paw nav-link" %></li>
-        <li class="nav-link"><%= link_to 'サイト概要', about_path, class:"fas fa-paw nav-link" %></li>
-        <li class="nav-link"><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class:"fas fa-paw nav-link" %></li>
+        <li class="nav-link"><%= link_to 'トップページ', root_path, class:"fas fa-paw nav-link faa-vertical animated-hover" %></li>
+        <li class="nav-link"><%= link_to 'マイページ', customer_path(current_customer.id), class:"fas fa-paw nav-link faa-vertical animated-hover" %></li>
+        <li class="nav-link"><%= link_to 'ペット一覧', pets_path, class:"fas fa-paw nav-link faa-vertical animated-hover" %></li>
+        <li class="nav-link"><%= link_to '通知一覧', notifications_path(current_customer.id), class:"fas fa-paw nav-link faa-vertical animated-hover" %></li>
+        <li class="nav-link"><%= link_to 'サイト概要', about_path, class:"fas fa-paw nav-link faa-vertical animated-hover" %></li>
+        <li class="nav-link"><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class:"fas fa-paw nav-link faa-vertical animated-hover" %></li>
       <% else %>
-        <li class="nav-link"><%= link_to 'トップページ', root_path, class:"fas fa-paw nav-link" %></li>
-        <li class="nav-link"><%= link_to "新規登録", new_customer_registration_path, class:"fas fa-paw nav-link" %></li>
-        <li class="nav-link"><%= link_to "ログイン", new_customer_session_path, class:"fas fa-paw nav-link" %></li>
-        <li class="nav-link"><%= link_to 'ペット一覧', pets_path, class:"fas fa-paw nav-link" %></li>
-        <li class="nav-link"><%= link_to 'サイト概要', about_path, class:"fas fa-paw nav-link" %></li>
+        <li class="nav-link"><%= link_to 'トップページ', root_path, class:"fas fa-paw nav-link faa-vertical animated-hover" %></li>
+        <li class="nav-link"><%= link_to "新規登録", new_customer_registration_path, class:"fas fa-paw nav-link faa-vertical animated-hover" %></li>
+        <li class="nav-link"><%= link_to "ログイン", new_customer_session_path, class:"fas fa-paw nav-link faa-vertical animated-hover" %></li>
+        <li class="nav-link"><%= link_to 'ペット一覧', pets_path, class:"fas fa-paw nav-link faa-vertical animated-hover" %></li>
+        <li class="nav-link"><%= link_to 'サイト概要', about_path, class:"fas fa-paw nav-link faa-vertical animated-hover" %></li>
       <% end %>
     </ul>
   </nav>
