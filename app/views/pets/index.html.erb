@@ -1,3 +1,4 @@
+<% @page_title = 'ペット一覧' %>
 <div class="container">
   <div class="row">
     <%= render "search/search_form", q: @q %>
@@ -5,5 +6,7 @@
   <div class="row">
     <%= render "pets/index", pet: @pet %>
   </div>
-<div class="paginate"><%= paginate @pet %></div><!--ページング-->
+  <div class="text-center">
+    <div class="paginate justify-content-center"><%= paginate @pet %></div><!--ページング-->
+  </div>
 </div>

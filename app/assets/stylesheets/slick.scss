@@ -1,20 +1,45 @@
+// .slider {
+//     width: 100%;
+//     position: relative;
+//     display: block;
+//     box-sizing: border-box;
+//     -webkit-touch-callout: none;
+//     -webkit-user-select: none;
+//     -khtml-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+//     -ms-touch-action: pan-y;
+//     touch-action: pan-y;
+//     -webkit-tap-highlight-color: transparent;
+// }
+
+
+
+.slider-box {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 .slider {
-    width: 100%;
-    position: relative;
-    display: block;
-    box-sizing: border-box;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -ms-touch-action: pan-y;
-    touch-action: pan-y;
-    -webkit-tap-highlight-color: transparent;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: visible;
 }
 
 .slickimage {
-    margin-left: auto;
-    margin-right: auto;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width:425px) {
+  .slider-box {
+  display: none;
+  }
+}
+@media screen and (max-width:767px) {
+  .slider-box {
+  display: none;
+  }
 }
