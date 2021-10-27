@@ -16,7 +16,12 @@ class PetsController < ApplicationController
   end
 
   def index
-    @pet = Pet.page(params[:page]).per(4).order('updated_at DESC')#ページング機能
+     @customer = current_customer
+    if params[:page_set] == "my_pet" # 自分のペットを表示
+     @pet = @customer.pets.page(params[:page]).per(3).order("created_at DESC")
+    else
+     @pet = Pet.page(params[:page]).per(3).order('updated_at DESC')#ページング機能
+    end
   end
 
   def show
@@ -41,7 +46,7 @@ class PetsController < ApplicationController
   end
 
   def search
-    @results = @q.result
+    @results = @q.result.page(params[:page]).per(6).order('updated_at DESC')#ページング機能
   end
 
   private

@@ -16,18 +16,19 @@
   @import "bootstrap";
 
   /* ブラウザがそれぞれ持っているCSSをリセットするための記述 */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  body {
-  // background-color: #797979;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
   background-size: cover;
   background-image: image-url("background.jpg");
-  height:500px;
-  min-width:100%;
 
   font-family: 'MS Gothic';
   font-size: 18px;
@@ -35,72 +36,8 @@
   color: #333;
   letter-spacing: 1.5px;
   line-height: 1.75;
-  text-shadow: 1px 1px 2px #808080;
-  }
 
-
-
-//select::-ms-expand {IE矢印無効
-// 	display: none;
-// }
-// select {
-// 	-webkit-appearance: none; //各ブラウザのselect要素の標準CSSをリセット
-// 	-moz-appearance: none; //各ブラウザのselect要素の標準CSSをリセット
-// 	appearance: none; //各ブラウザのselect要素の標準CSSをリセット
-// 	margin-bottom: 20px;
-// 	padding: 7px 30px 7px 10px;
-// 	font-size: 93%;
-// 	line-height: 1.1em;
-// 	border-radius: 5px;
-// 	border: none;
-// 	background-repeat: no-repeat;
-// 	background-size: 12px 10px;
-// 	background-position: right 10px center;
-// 	background-color: #bddfff;
-// }
-
-  // .sbox {矢印レイアウト
-  //       position: relative;
-  //     }
-
-  //   .sbox::after {
-  //     content: "";
-  //     position: absolute;
-  //     top: 0;
-  //     right: 10px;
-  //     width: 30px;
-  //     height: 30px;
-  //     background-image: url(down.png);
-  //     background-size: 60%;
-  //     background-repeat: no-repeat;
-  //     background-position: right center;
-  //     pointer-events: none;
-  //   }
-
-//   .form-control, .input {
-// 	-webkit-appearance: none; //各ブラウザのselect要素の標準CSSをリセット
-// 	-moz-appearance: none; //各ブラウザのselect要素の標準CSSをリセット
-// 	appearance: none; //各ブラウザのselect要素の標準CSSをリセット
-// 	width: 100%;
-// 	margin: 0px 3px;
-// 	padding: 7px 30px 7px 10px;
-// 	font-size: 110%;
-// 	line-height: 1.1em;
-// 	border-radius: 5px;
-// 	border: none;
-// 	background-image: url("paper.jpg");
-
-// // 	background-repeat: no-repeat;
-// // 	background-size: 12px 10px;
-// // 	background-position: right 10px center;
-// 	//background-color: #bddfff;
-// 	 // color: #FFF;
-
-//     background: #795548;
-//     border-bottom: solid 6px #4b2c20;
-//     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-//     border-radius: 9px;
-// }
+}
 
 search {
   color: #FFF;
@@ -110,20 +47,44 @@ search {
     border-radius: 9px;
 }
 
+a {
+  color: white;
+  text-decoration: none!important;
+}
+
+a:hover {
+  color: darkgreen;
+  text-decoration: underline;
+}
+
+
 .container {
   margin-top: 3rem;
 }
 
+.row {
+  padding: 0px 0px 20px 0px;
+}
+
+h2 {
+  color: white;
+  text-shadow:  black 1px 1px 0px, black -1px 1px 0px, black 1px -1px 0px, black -1px -1px 0px;
+  display: inline-block;
+  margin: 0px 10px;
+}
 
 .card {
   background-image: image-url("wood.jpg");
   box-shadow: 0 10px 25px 0 black;
   padding: 10px;
+  width: 100%;
+  table-layout: fixed;
+  margin: 15px auto;
 }
 
 .table, .card-body, {
     background-image: image-url("paper.jpg");
-    background-size: 250%;
+    background-size: 3000px 2000px;
     background-position: center;
     border-radius: 1%;
     box-shadow: 0 10px 25px 0 black;
@@ -132,52 +93,36 @@ th{
   width: 40%;
 }
 
-img {
+.btn {
+  font-weight: bolder;
+  font-size: 1rem;
+
+}
+
+img:not(.logo, .about-img2) {
     background-image: image-url("paper2.jpg");
     background-size: 100px;
     background-position: center;
     width:  300px;
     height: 300px;
     display:block;
-    margin: 0 auto;
+    margin: 15px auto;
     border-radius: 1%;
     background-position: left top;
-    // background-clip: padding-box;
     border: 20px solid rgba(252,226,255,0);
     box-shadow: 0 10px 25px 0 black;
 }
+//ロゴ
+.logo {
+  width:  100px;
+  height: 100px;
+  margin: -15px 0px 0px 50px;
+}
+.logp-box {
 
-
-.pet-show-left{
-  margin: auto;
 }
 
-
-.page-header{
-    position: relative;
-    background: #fff0cd;
-    box-shadow: 0px 0px 0px 5px #fff0cd;
-    border: dashed 2px white;
-    padding: 0.2em 0.5em;
-    color: #454545;
-    margin: 20px auto;
-    border-radius:15px;
-}
-.page-header:after{
-    position: absolute;
-    content: '';
-    right: -7px;
-    top: -7px;
-    border-width: 0 15px 15px 0;
-    border-style: solid;
-    border-color: #ffdb88 #fff #ffdb88;
-    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
-}
-.page-header p {
-    margin: 0;
-    padding: 0;
-}
-
+// アバウトページ
 .about-img {
   position: absolute;
   margin: 0px 0px 0px 20px;
@@ -188,96 +133,324 @@ img {
   position: relative;
   margin: 0px 20px 0px 200px;
   transform: rotate(-10deg);
+  background-image: image-url("paper2.jpg");
+  background-size: 100px;
+  background-position: center;
+  width:  300px;
+  height: 300px;
+  display:block;
+  border-radius: 1%;
+  background-position: left top;
+  border: 20px solid rgba(252,226,255,0);
+  box-shadow: 0 10px 25px 0 black;
+}
+//トップページリンクボタン
+.top-btn {
+  background-image: image-url("wood.jpg");
+  margin: 0px 41px;
+  padding: 20px 0px;
+  width: 280px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px 0 black;
 }
 
-.card-text {
- text-align: left;
+.top-box {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
 }
 
-i {;
-    width:  250px;
-    text-align: center;
-    color: white;
-}
-
-.icon-top {
-  background-image: image-url("iron.jpg");
-    background-size: 500px;
-    background-position: center;
-    width:  300px;
-    height: 25%;
-    display:block;
-    margin: auto;
-    border-radius: 50%;
-    border: 20px solid rgba(252,226,255,0);
-    box-shadow: 0 10px 25px 0 black;
-}
-
-
+// ヘッダー
 header {
-  // background-color: blue;
-  // width: 100%; /* 横幅90% */
-  // padding: 5px 0;
-  // margin: 10% 0% auto;
-  // text-align: center;
   background-image: image-url("wood.jpg");
   box-shadow: 0 10px 25px 0 black;
-  // background: gray;
-    display: flex;
-    padding: 0px 20px;
-    top: 0; /* 上下の固定位置を上から0pxにする */
-    left: 0; /* 左右の固定位置を左から0pxにする */
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  padding: 0px 20px;
+  top: 0; /* 上下の固定位置を上から0pxにする */
+  left: 0; /* 左右の固定位置を左から0pxにする */
+  justify-content: space-between;
+  width: 100%;
 }
-
+//フッター
 footer {
-  background: gray;
-  // bottom: 0; /*下に固定*/
+  position: absolute;/*←絶対位置*/
+  bottom: 0; /*下に固定*/
+  box-shadow: 0 10px 25px 0 black;
   text-align: center;
   color: white;
   width: 100%;
+  background-image: image-url("wood.jpg");
 }
 
-.header-icon-text {
+.wrapper {
+  min-height: 100vh;
   position: relative;
-  color: white;
-// 	float: left;
-  margin: auto;
-	padding: 20px 0px 0px 0px;
-	vertical-align: 20%;
-	font-family: 'fantasy';
-  font-size: 18px;
-  font-weight: bolder;
-  letter-spacing: 1.5px;
-  line-height: 1.75;
-  text-shadow:  black 1px 1px 0px, black -1px 1px 0px, black 1px -1px 0px, black -1px -1px 0px;
+  padding-bottom: 80px;
 }
-// 	.header-icon {
-// 	  position: absolute;
-// 	  margin: auto;
-// 	  padding: auto;
-// 		width: 10px;
-// 		height: 10px;
-// 		background: url(icon.png) center/60px auto no-repeat;
-// 	}
+//ヘッダーリンク
+.navbar-outline {
+  padding: 15px 0px 0px 0px;
+}
 
-  .nav-list {
-    text-align: center;
-  padding: 10px 0;
-  margin: 0 auto;
-	}
+.nav-link {
+  color: white;
+  list-style: none;
+  display: inline-block;
+  float: left;
+}
+//ページング
+.paginate, .pagination {
+  margin: auto;
+  text-align: center;
+  font-size: 16px;
+  justify-content: center;
+}
+//各種ボタン
+button {
+  padding: 10px;
+}
 
-	.nav-link {
-	  color: white;
-	  list-style: none;
-    display: inline-block;
-    margin: 0 10px;
-	  float: left;
-	}
+.delete-btn {
+  color: red;
+  float: right;
+  width: 80px;
+}
 
-	.paginate, .pagination {
-    margin: auto;
-    text-align: center;
-    font-size: 16px;
+.pagination>li>a {
+  border: none;
+  color: black;
+}
+
+.pagination>.active>a {
+  background-color: green!important;
+}
+
+#menu-btn-check {
+  display: none;
+}
+
+.menu-btn {
+  display: block;
+  margin-bottom: -0.5rem;
+}
+
+.hamburger-menu{
+  margin: 0px;
+  padding: 0px;
+}
+@media screen and (max-width:1024px) {
+  .about-img2 {
+    position: relative;
+    margin: 0px 20px 0px 130px;
+    transform: rotate(-10deg);
+    background-image: image-url("paper2.jpg");
+    background-size: 100px;
+    background-position: center;
+    width:  300px;
+    height: 300px;
+    display:block;
+    border-radius: 1%;
+    background-position: left top;
+    border: 20px solid rgba(252,226,255,0);
+    box-shadow: 0 10px 25px 0 black;
   }
+
+  .nav-link {
+    color: white;
+    list-style: none;
+    display: inline-block;
+    float: left;
+    padding: 0px 20px;
+    margin: 4px 0px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: green;
+  }
+  .menu-btn span,
+  .menu-btn span:before,
+  .menu-btn span:after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25px;
+      border-radius: 3px;
+      background-color: #ffffff;
+      position: absolute;
+  }
+  .menu-btn span:before {
+      bottom: 8px;
+  }
+  .menu-btn span:after {
+      top: 8px;
+  }
+
+  #menu-btn-check:checked ~ .menu-btn span {
+      background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+  }
+  #menu-btn-check:checked ~ .menu-btn span::before {
+      bottom: 0;
+      transform: rotate(45deg);
+  }
+  #menu-btn-check:checked ~ .menu-btn span::after {
+      top: 0;
+      transform: rotate(-45deg);
+  }
+  #menu-btn-check:checked ~ .navbar-outline {
+      right: 75%;/*メニューを画面内へ*/
+  }
+
+  .navbar-outline {
+      width: 25%;
+      height: 70%;
+      position: fixed;
+      top: 0;
+      right: 100%;/*leftの値を変更してメニューを画面外へ*/
+      z-index: 80;
+      background-color: green;
+      opacity: 0.8;
+      transition: all 0.5s;/*アニメーション設定*/
+  }
+  .navbar-outline ul {
+      padding: 5px 10px 0;
+  }
+  .navbar-outline ul li {
+      border-bottom: solid 1px #ffffff;
+      list-style: none;
+  }
+  .navbar-outline ul li a {
+      display: block;
+      width: 100%;
+      font-size: 15px;
+      box-sizing: border-box;
+      color:#ffffff;
+      text-decoration: none;
+      padding: 9px 0px 10px 0;
+      position: relative;
+  }
+
+  .top-btn {
+    background-image: image-url("wood.jpg");
+    margin: 0px 0px;
+    padding: 20px 0px;
+    width: 280px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 10px 25px 0 black;
+  }
+
+  .about-img2 {
+    position: relative;
+    margin: 0px 20px 0px 0px;
+    transform: rotate(-10deg);
+    background-image: image-url("paper2.jpg");
+    background-size: 100px;
+    background-position: center;
+    width:  300px;
+    height: 300px;
+    display:block;
+    border-radius: 1%;
+    background-position: left top;
+    border: 20px solid rgba(252,226,255,0);
+    box-shadow: 0 10px 25px 0 black;
+  }
+}
+
+@media screen and (max-width:426px) {
+  .menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: green;
+  }
+  .menu-btn span,
+  .menu-btn span:before,
+  .menu-btn span:after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25px;
+      border-radius: 3px;
+      background-color: #ffffff;
+      position: absolute;
+  }
+  .menu-btn span:before {
+      bottom: 8px;
+  }
+  .menu-btn span:after {
+      top: 8px;
+  }
+
+  #menu-btn-check:checked ~ .menu-btn span {
+      background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+  }
+  #menu-btn-check:checked ~ .menu-btn span::before {
+      bottom: 0;
+      transform: rotate(45deg);
+  }
+  #menu-btn-check:checked ~ .menu-btn span::after {
+      top: 0;
+      transform: rotate(-45deg);
+  }
+  #menu-btn-check:checked ~ .navbar-outline {
+      right: 40%;/*メニューを画面内へ*/
+  }
+
+  .navbar-outline {
+      width: 60%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      right: 100%;/*leftの値を変更してメニューを画面外へ*/
+      z-index: 80;
+      background-color: green;
+      opacity: 0.8;
+      transition: all 0.5s;/*アニメーション設定*/
+  }
+  .navbar-outline ul {
+      padding: 5px 10px 0;
+  }
+  .navbar-outline ul li {
+      border-bottom: solid 1px #ffffff;
+      list-style: none;
+  }
+  .navbar-outline ul li a {
+      display: block;
+      width: 100%;
+      font-size: 15px;
+      box-sizing: border-box;
+      color:#ffffff;
+      text-decoration: none;
+      padding: 9px 0px 10px 0;
+      position: relative;
+  }
+
+
+  .about-img {
+    width: 100%!important;
+  position: relative;
+  margin: 0px 0px 0px 0px;
+  transform: rotate(0deg);
+  }
+  .about-img2 {
+    display: none;
+  }
+}

@@ -1,12 +1,12 @@
+<% @page_title = '新規登録' %>
 <div class="container">
   <div class="row card w-100">
-    <h2 class="card-body">Sign up</h2>
+    <h2 class="card-body">新規登録</h2>
+    </div>
+    <div class="row card w-100">
       <%= form_with model: @customer, url: customer_registration_path, local: true do |f| %>
       <%= render "devise/shared/error_messages", resource: resource, class: "error_message" %>
         <table class="table table-borderless">
-          <thead>
-          </thead>
-          <tbody>
             <tr>
               <th scope="row" style="width: 40%"><%= f.label :nickname %></th>
               <td><%= f.text_field :nickname, autofocus: true, class:"form-control" %></td>
@@ -22,7 +22,7 @@
             <tr>
               <th scope="row"><%= f.label :password %>
                 <% if @minimum_password_length %>
-                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <em>(<%= @minimum_password_length %> 文字以上)</em>
                 <% end %>
               </th>
               <td><%= f.password_field :password, autocomplete: "new-password", class:"form-control" %></td>
@@ -40,6 +40,10 @@
               <td><%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "---"}, {class: "form-control"} %></td>
             </tr>
             <tr>
+              <th scope="row"><%= f.label :city %></th>
+              <td><%= f.text_field :city, autofocus: true, class:"form-control" %></td>
+            </tr>
+            <tr>
               <th scope="row"><%= f.label :building %></th>
               <td><%= f.text_field :building, autofocus: true, class:"form-control" %></td>
             </tr>
@@ -47,9 +51,8 @@
               <th scope="row"><%= f.label :phone %></th>
               <td><%= f.text_field :phone, autofocus: true, class:"form-control" %></td>
             </tr>
-          </tbody>
         </table>
-         <%= f.submit "Sign up", class: 'btn btn-primary btn' %>
+         <%= f.submit "登録", class: 'btn btn-light btn' %>
       <% end %>
         <%= render "devise/shared/links" %>
     </div>

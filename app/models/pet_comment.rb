@@ -4,6 +4,8 @@ class PetComment < ApplicationRecord
 
   has_many :notifications, dependent: :destroy#通知機能
 
+  validates :comment, presence: true# 空欄コメント防ぐ
+
 end
 
 

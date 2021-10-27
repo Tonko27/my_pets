@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MyPets</title>
+    <meta charset="UTF-8">
+  <!--レスポンシブ-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    
+    <title><%= page_title %></title>
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+  <!--javascript-->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <script src="https://kit.fontawesome.com/1d8af2b292.js" crossorigin="anonymous"></script><!--fontawesome機能-->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/><!--slick機能-->
+  <!--fontawesome機能-->
+    <script src="https://kit.fontawesome.com/1d8af2b292.js" crossorigin="anonymous"></script>
+  <!--fontawesomeアニメーション機能-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.2.1/font-awesome-animation.css" type="text/css" media="all" />
+  <!--slick機能-->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    
   </head>
 
   <body>
-    <!--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>-->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script><!--slick機能-->
+  <!--slick機能-->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <div class="wrapper">
+      <%= render 'layouts/header' %>
 
-    <%= render 'layouts/header' %>
-
-    <main>
-      <% if flash[:notice] %>
-        <div class="flash mt-2"><%= flash[:notice] %></div>
-      <% end %>
-    <%= yield %>
-    </main>
-    <%= render 'layouts/footer' %>
+      <main>
+        <% if flash[:notice] %>
+          <div class="flash mt-2"><%= flash[:notice] %></div>
+        <% end %>
+      <%= yield %>
+      </main>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>

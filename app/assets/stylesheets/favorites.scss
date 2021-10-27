@@ -2,26 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.color-delete{
+.favorite-delete{
   color:red; /*お気に入りボタン外す、赤色にする*/
   font-size:1.5em;
-  margin: 10px 50px;
-	padding-right: 100px;
-	border:1px solid #3079ed;
-  background-color:#e0f7fa;
-  width:100px;
-  height:38px;
-  border-radius:5px;
+	padding: 15px;
+	border:1px solid black;
+  background-color: white;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.color-post{
-  color:blue; /*お気に入りボタン登録、青色にする*/
+.favorite-post{
+  color: darkgreen; /*お気に入りボタン登録、緑色にする*/
   font-size:1.5em;
-  margin: 10px 50px;
-	padding-right: 100px;
-	border:1px solid #3079ed;
-  background-color:#e0f7fa;
-  width:100px;
-  height:38px;
-  border-radius:5px;
+	padding: 15px;
+	border:1px solid black;
+  background-color: white;
+  border-radius: 100%;
+  position: absolute; //写真の上にボタン表示
+  top: 0;
+  left: 0;
 }

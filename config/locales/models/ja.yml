@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    models:
+      pet_comment: "ペットのコメント"
+      pet: "ペット"
+    attributes:
+      pet_comment:
+        comment: "コメント"
+      pet:
+        image: "写真"
+        gender_id: "性別"
+        category_id: "カテゴリー"
+        breed: "品種"
+        age_id: "年齢"
+    # errors:
+    #   models:
+    #     pet_comment:
+    #       attributes:
+    #         comment:
+    #           format: '%{message}'
+    #           blank: %{attribute}を入力してください。
