@@ -5,7 +5,7 @@
     <div class="user-view clearfix ">
       <%== notification_form(notification) %><!--通知内容（詳細はnotification_helper記述）-->
       <span><%= " (#{time_ago_in_words(notification.created_at)}前)" %></span><!--通知された時間-->
-      <%= link_to notification_path(notification), method: :delete do %><!--削除ボタン-->
+      <%= link_to notification_path(notification), data: { confirm: "通知を削除しますか?" }, method: :delete do %><!--削除ボタン-->
         <i class="fas fa-trash faa-horizontal animated-hover delete-btn">削除</i>
       <% end %>
     </div>

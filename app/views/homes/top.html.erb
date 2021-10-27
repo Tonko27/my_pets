@@ -8,39 +8,39 @@
         <li><img class="slickimage" src="assets/gecko.jpg"></li>
       </ul>
     </div>
-    <div class="tb">
+    <div class="top-box">
       <% if customer_signed_in? %>
-      <span class="icon-top">
+      <span>
         <%= link_to new_pet_path do %>
           <i class="fas fa-paw faa-float animated-hover fa-2x top-btn">ペット登録</i>
         <% end %>
       </span>
-      <span class="icon-top">
+      <span>
         <%= link_to pets_path do %>
           <i class="fas fa-paw faa-float animated-hover fa-2x top-btn">ペット閲覧</i>
         <% end %>
       </span>
-      <span class="icon-top">
+      <span>
         <%= link_to destroy_customer_session_path, method: :delete do %>
           <i class="fas fa-paw faa-float animated-hover fa-2x top-btn">ログアウト</i>
         <% end %>
       </span>
       <% else %>
-      <span class="icon-top">
+      <span>
         <%= link_to pets_path do %>
-          <i class="fas fa-paw fa-2x top-btn">ペット閲覧</i>
+          <i class="fas fa-paw faa-float animated-hover fa-2x top-btn">ペット閲覧</i>
         <% end %>
       </span>
-      <span class="icon-top">
+      <span>
         <%= link_to new_customer_registration_path do %>
-          <i class="fas fa-paw faa-vertical animated-hoover fa-2x">新規登録</i>
+          <i class="fas fa-paw faa-float animated-hover fa-2x top-btn">新規登録</i>
         <% end %>
        </span>
-      <span class="icon-top padding">
+      <span>
         <%= link_to new_customer_session_path do %>
-          <i class="fas fa-paw faa-vertical animated-hoover fa-2x">ログイン</i>
+          <i class="fas fa-paw faa-float animated-hover fa-2x top-btn">ログイン</i>
         <% end %>
-       </span>
+      </span>
       <% end %>
     </div>
 </div>

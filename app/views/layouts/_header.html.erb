@@ -1,8 +1,12 @@
 <header class="site-header">
   <div class="logo-box"><img class="logo" src="/assets/logo.png" alt=""></div>
-  <nav class="navbar-outline">
+  <div class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+  <div class="navbar-outline">
     <ul>
       <% if customer_signed_in? %>
+        <li class="nav-link">ログイン中<br><%= current_customer.name %></li>
         <li class="nav-link"><%= link_to 'トップページ', root_path, class:"fas fa-paw nav-link faa-vertical animated-hover" %></li>
         <li class="nav-link"><%= link_to 'マイページ', customer_path(current_customer.id), class:"fas fa-paw nav-link faa-vertical animated-hover" %></li>
         <li class="nav-link"><%= link_to 'ペット一覧', pets_path, class:"fas fa-paw nav-link faa-vertical animated-hover" %></li>
@@ -18,4 +22,7 @@
       <% end %>
     </ul>
   </nav>
+
+    </div>
+
 </header>

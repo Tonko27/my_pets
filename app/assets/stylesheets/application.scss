@@ -39,32 +39,6 @@ html, body {
 
 }
 
-
-//   .form-control, .input {入力フォーム
-// 	-webkit-appearance: none; //各ブラウザのselect要素の標準CSSをリセット
-// 	-moz-appearance: none; //各ブラウザのselect要素の標準CSSをリセット
-// 	appearance: none; //各ブラウザのselect要素の標準CSSをリセット
-// 	width: 100%;
-// 	margin: 0px 3px;
-// 	padding: 7px 30px 7px 10px;
-// 	font-size: 110%;
-// 	line-height: 1.1em;
-// 	border-radius: 5px;
-// 	border: none;
-// 	background-image: url("paper.jpg");
-
-// // 	background-repeat: no-repeat;
-// // 	background-size: 12px 10px;
-// // 	background-position: right 10px center;
-// 	//background-color: #bddfff;
-// 	 // color: #FFF;
-
-//     background: #795548;
-//     border-bottom: solid 6px #4b2c20;
-//     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-//     border-radius: 9px;
-// }
-
 search {
   color: #FFF;
     background: #795548;
@@ -105,6 +79,7 @@ h2 {
   padding: 10px;
   width: 100%;
   table-layout: fixed;
+  margin: 15px auto;
 }
 
 .table, .card-body, {
@@ -131,7 +106,7 @@ img:not(.logo, .about-img2) {
     width:  300px;
     height: 300px;
     display:block;
-    margin: auto;
+    margin: 15px auto;
     border-radius: 1%;
     background-position: left top;
     border: 20px solid rgba(252,226,255,0);
@@ -147,32 +122,6 @@ img:not(.logo, .about-img2) {
 
 }
 
-
-// 通知アイコン
-.page-header{
-    position: relative;
-    background: #fff0cd;
-    box-shadow: 0px 0px 0px 5px #fff0cd;
-    border: dashed 2px white;
-    padding: 0.2em 0.5em;
-    color: #454545;
-    margin: 20px auto;
-    border-radius:15px;
-}
-.page-header:after{
-    position: absolute;
-    content: '';
-    right: -7px;
-    top: -7px;
-    border-width: 0 15px 15px 0;
-    border-style: solid;
-    border-color: #ffdb88 #fff #ffdb88;
-    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
-}
-.page-header p {
-    margin: 0;
-    padding: 0;
-}
 // アバウトページ
 .about-img {
   position: absolute;
@@ -195,26 +144,7 @@ img:not(.logo, .about-img2) {
   border: 20px solid rgba(252,226,255,0);
   box-shadow: 0 10px 25px 0 black;
 }
-// トップページのリンクボタン
-// i {
-//     width:  250px;
-//     text-align: center;
-//     color: white;
-// }
-// トップページのリンクボタン背景、位置
-// .icon-top {
-//   background-image: image-url("wood.jpg");
-//   background-size: 500px;
-//   background-position: center;
-//   width:  300px;
-//   height: 25%;
-//   display: block;
-//   margin: auto;
-//   border-radius: 50%;
-//   border: 20px solid rgba(252,226,255,0);
-//   box-shadow: 0 10px 25px 0 black;
-// }
-
+//トップページリンクボタン
 .top-btn {
   background-image: image-url("wood.jpg");
   margin: 0px 41px;
@@ -225,7 +155,7 @@ img:not(.logo, .about-img2) {
   box-shadow: 0 10px 25px 0 black;
 }
 
-.tb {
+.top-box {
   text-align: center;
   margin: 0px;
   padding: 0px;
@@ -285,4 +215,242 @@ button {
   color: red;
   float: right;
   width: 80px;
+}
+
+.pagination>li>a {
+  border: none;
+  color: black;
+}
+
+.pagination>.active>a {
+  background-color: green!important;
+}
+
+#menu-btn-check {
+  display: none;
+}
+
+.menu-btn {
+  display: block;
+  margin-bottom: -0.5rem;
+}
+
+.hamburger-menu{
+  margin: 0px;
+  padding: 0px;
+}
+@media screen and (max-width:1024px) {
+  .about-img2 {
+    position: relative;
+    margin: 0px 20px 0px 130px;
+    transform: rotate(-10deg);
+    background-image: image-url("paper2.jpg");
+    background-size: 100px;
+    background-position: center;
+    width:  300px;
+    height: 300px;
+    display:block;
+    border-radius: 1%;
+    background-position: left top;
+    border: 20px solid rgba(252,226,255,0);
+    box-shadow: 0 10px 25px 0 black;
+  }
+
+  .nav-link {
+    color: white;
+    list-style: none;
+    display: inline-block;
+    float: left;
+    padding: 0px 20px;
+    margin: 4px 0px;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: green;
+  }
+  .menu-btn span,
+  .menu-btn span:before,
+  .menu-btn span:after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25px;
+      border-radius: 3px;
+      background-color: #ffffff;
+      position: absolute;
+  }
+  .menu-btn span:before {
+      bottom: 8px;
+  }
+  .menu-btn span:after {
+      top: 8px;
+  }
+
+  #menu-btn-check:checked ~ .menu-btn span {
+      background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+  }
+  #menu-btn-check:checked ~ .menu-btn span::before {
+      bottom: 0;
+      transform: rotate(45deg);
+  }
+  #menu-btn-check:checked ~ .menu-btn span::after {
+      top: 0;
+      transform: rotate(-45deg);
+  }
+  #menu-btn-check:checked ~ .navbar-outline {
+      right: 75%;/*メニューを画面内へ*/
+  }
+
+  .navbar-outline {
+      width: 25%;
+      height: 70%;
+      position: fixed;
+      top: 0;
+      right: 100%;/*leftの値を変更してメニューを画面外へ*/
+      z-index: 80;
+      background-color: green;
+      opacity: 0.8;
+      transition: all 0.5s;/*アニメーション設定*/
+  }
+  .navbar-outline ul {
+      padding: 5px 10px 0;
+  }
+  .navbar-outline ul li {
+      border-bottom: solid 1px #ffffff;
+      list-style: none;
+  }
+  .navbar-outline ul li a {
+      display: block;
+      width: 100%;
+      font-size: 15px;
+      box-sizing: border-box;
+      color:#ffffff;
+      text-decoration: none;
+      padding: 9px 0px 10px 0;
+      position: relative;
+  }
+
+  .top-btn {
+    background-image: image-url("wood.jpg");
+    margin: 0px 0px;
+    padding: 20px 0px;
+    width: 280px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 10px 25px 0 black;
+  }
+
+  .about-img2 {
+    position: relative;
+    margin: 0px 20px 0px 0px;
+    transform: rotate(-10deg);
+    background-image: image-url("paper2.jpg");
+    background-size: 100px;
+    background-position: center;
+    width:  300px;
+    height: 300px;
+    display:block;
+    border-radius: 1%;
+    background-position: left top;
+    border: 20px solid rgba(252,226,255,0);
+    box-shadow: 0 10px 25px 0 black;
+  }
+}
+
+@media screen and (max-width:426px) {
+  .menu-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: green;
+  }
+  .menu-btn span,
+  .menu-btn span:before,
+  .menu-btn span:after {
+      content: '';
+      display: block;
+      height: 3px;
+      width: 25px;
+      border-radius: 3px;
+      background-color: #ffffff;
+      position: absolute;
+  }
+  .menu-btn span:before {
+      bottom: 8px;
+  }
+  .menu-btn span:after {
+      top: 8px;
+  }
+
+  #menu-btn-check:checked ~ .menu-btn span {
+      background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+  }
+  #menu-btn-check:checked ~ .menu-btn span::before {
+      bottom: 0;
+      transform: rotate(45deg);
+  }
+  #menu-btn-check:checked ~ .menu-btn span::after {
+      top: 0;
+      transform: rotate(-45deg);
+  }
+  #menu-btn-check:checked ~ .navbar-outline {
+      right: 40%;/*メニューを画面内へ*/
+  }
+
+  .navbar-outline {
+      width: 60%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      right: 100%;/*leftの値を変更してメニューを画面外へ*/
+      z-index: 80;
+      background-color: green;
+      opacity: 0.8;
+      transition: all 0.5s;/*アニメーション設定*/
+  }
+  .navbar-outline ul {
+      padding: 5px 10px 0;
+  }
+  .navbar-outline ul li {
+      border-bottom: solid 1px #ffffff;
+      list-style: none;
+  }
+  .navbar-outline ul li a {
+      display: block;
+      width: 100%;
+      font-size: 15px;
+      box-sizing: border-box;
+      color:#ffffff;
+      text-decoration: none;
+      padding: 9px 0px 10px 0;
+      position: relative;
+  }
+
+
+  .about-img {
+    width: 100%!important;
+  position: relative;
+  margin: 0px 0px 0px 0px;
+  transform: rotate(0deg);
+  }
+  .about-img2 {
+    display: none;
+  }
 }

@@ -31,6 +31,21 @@ $(document).on('turbolinks:load', function() { //slick機能
     });
 });
 
+$(document).on('turbolinks:load', function() { //slick機能
+    $('.slider').slick({
+    responsive: [
+        {
+      breakpoint: 768,  //ブレイクポイントを指定
+      settings: {
+        slidesToShow: 1,
+      }},{
+      breakpoint: 425,
+      settings: {
+        slidesToShow: 1,
+      }},]
+ });
+});
+
 function copyToClipboard() {
     // コピー対象をJavaScript上で変数として定義する
     var copyTarget = document.getElementById("copyTarget");
