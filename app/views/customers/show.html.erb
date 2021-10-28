@@ -7,10 +7,6 @@
           <td><%= @customer.nickname %></td>
         </tr>
         <tr>
-          <th scope="row">氏名</th>
-          <td><%= @customer.name %></td>
-        </tr>
-        <tr>
           <th scope="row">メールアドレス</th>
           <td>
           <!-- コピー対象要素とコピーボタン -->
@@ -18,14 +14,21 @@
             <button class="far fa-clipboard faa-horizontal animated-hover", onclick="copyToClipboard()"></button>
           </td>
         </tr>
+      <% if @customer.id == current_customer.id %>
+        <tr>
+          <th scope="row">氏名</th>
+          <td><%= @customer.name %></td>
+        </tr>
         <tr>
           <th scope="row">郵便番号</th>
           <td><%= @customer.postalcode %></td>
         </tr>
+      <% end %>
         <tr>
           <th scope="row">都道府県</th>
           <td><%= @customer.prefecture.name %></td>
         </tr>
+      <% if @customer.id == current_customer.id %>
         <tr>
           <th scope="row">市町村</th>
           <td><%= @customer.city %></td>
@@ -38,6 +41,7 @@
           <th scope="row">電話番号</th>
           <td><%= @customer.phone %></td>
         </tr>
+      <% end %>
       </tbody>
     </table>
   </div>

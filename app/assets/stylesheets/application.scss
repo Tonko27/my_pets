@@ -73,6 +73,10 @@ h2 {
   margin: 0px 10px;
 }
 
+.comment-area {
+  margin: 0.1rem;
+}
+
 .card {
   background-image: image-url("wood.jpg");
   box-shadow: 0 10px 25px 0 black;
@@ -343,12 +347,18 @@ button {
 
   .top-btn {
     background-image: image-url("wood.jpg");
-    margin: 0px 0px;
+    margin: 10px 0px;
     padding: 20px 0px;
     width: 280px;
     height: 80px;
     border-radius: 50%;
     box-shadow: 0 10px 25px 0 black;
+  }
+
+  .pet-button { //ペット詳細画面のボタン配置
+  	margin: 0px 0px;
+  	font-size: 100%;
+  	width: 100%;
   }
 
   .about-img2 {
@@ -443,6 +453,21 @@ button {
       position: relative;
   }
 
+  .top-btn {
+    background-image: image-url("wood.jpg");
+    margin: 10px 41px;
+    padding: 20px 0px;
+    width: 280px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 10px 25px 0 black;
+  }
+
+  .pet-button { //ペット詳細画面のボタン配置
+  	margin: 0px 0px;
+  	font-size: 100%;
+  	width: 100%;
+  }
 
   .about-img {
     width: 100%!important;
@@ -452,5 +477,14 @@ button {
   }
   .about-img2 {
     display: none;
+  }
+
+  select, .input-group, .form-control {
+    display: block;
+    width: 100%;
+  }
+
+  .form-control {
+    width: 100%!important;
   }
 }
