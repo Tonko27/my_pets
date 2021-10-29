@@ -38,8 +38,9 @@ class Customers::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-   protected
-  def after_update_path_for(resource)
+  protected
+
+  def after_update_path_for(_resource)
     # 自分で設定した「マイページ」へのパス
     customer_path(current_customer)
   end

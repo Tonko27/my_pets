@@ -26,8 +26,10 @@
     <div class="col-lg-6 col-sm-12 col-md-12 col-12">
       <div class="card text-center">
         <div class="card-body">
-        <img class="about-img" src="/assets/dog.jpg" alt="">
-        <img class="about-img2" src="/assets/cat.jpg" alt="">
+        <!--<img class="about-img" src="/assets/dog.jpg" alt="">-->
+        <%= image_tag asset_path("dog.jpg", alt: ""),class:"about-img" %>
+        <!--<img class="about-img2" src="/assets/cat.jpg" alt="">-->
+        <%= image_tag asset_path("cat.jpg", alt: ""),class:"about-img2" %>
         </div>
       </div>
     </div>

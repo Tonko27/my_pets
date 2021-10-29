@@ -1,11 +1,16 @@
 <div class="container">
     <div class="slider-box">
       <ul class="slider">
-        <li><img class="slickimage" src="assets/dog.jpg"></li>
-        <li><img class="slickimage" src="assets/cat.jpg"></li>
-        <li><img class="slickimage" src="assets/hamster.jpg"></li>
-        <li><img class="slickimage" src="assets/bird.jpg"></li>
-        <li><img class="slickimage" src="assets/gecko.jpg"></li>
+        <!--<li><img class="slickimage" src="assets/dog.jpg"></li>-->
+        <li><%= image_tag asset_path("dog.jpg", alt: ""),class:"slickimage" %></li>
+        <!--<li><img class="slickimage" src="assets/cat.jpg"></li>-->
+        <li><%= image_tag asset_path("cat.jpg", alt: ""),class:"slickimage" %></li>
+        <!--<li><img class="slickimage" src="assets/hamster.jpg"></li>-->
+        <li><%= image_tag asset_path("hamster.jpg", alt: ""),class:"slickimage" %></li>
+        <!--<li><img class="slickimage" src="assets/bird.jpg"></li>-->
+        <li><%= image_tag asset_path("bird.jpg", alt: ""),class:"slickimage" %></li>
+        <!--<li><img class="slickimage" src="assets/gecko.jpg"></li>-->
+        <li><%= image_tag asset_path("gecko.jpg", alt: ""),class:"slickimage" %></li>
       </ul>
     </div>
     <div class="top-box">

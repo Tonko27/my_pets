@@ -28,16 +28,12 @@
             <tr>
               <th scope="row">
                 <%= f.label :新しいパスワード %><br>
-                <i>(変更がない場合は入力しないでください)</i>
+                <i>(変更がない場合は現在のパスワードを入力してください)</i>
                 <% if @minimum_password_length %>
                 <em><%= @minimum_password_length %> 文字以上</em>
                 <% end %>
               </th>
               <td><%= f.password_field :password, autocomplete: "new-password" %></td>
-            </tr>
-            <tr>
-              <th scope="row"><%= f.label :パスワード（確認） %></th>
-              <td><%= f.password_field :password_confirmation, autocomplete: "new-password" %></td>
             </tr>
             <tr>
               <th scope="row">

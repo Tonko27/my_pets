@@ -1,8 +1,10 @@
 <%= form_with model: pet_comment, url: pet_pet_comments_path(pet), method: :post do |f| %>
 <% if pet_comment.errors.any? %>
+<div class="card-body">
   <% pet_comment.errors.full_messages.each do |message| %>
     <%= message %>
   <% end %>
+</div>
 <% end %>
   <div class="form_floating pt-4 pb-3">
     <%= f.text_area :comment, rows:'4',placeholder: "コメントをする", class: "form-control" %>
