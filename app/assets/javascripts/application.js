@@ -21,31 +21,34 @@
 
 /* global $*/
 
-$(document).on('turbolinks:load', function() { //slick機能
+//slick機能
+$(document).on('turbolinks:load', function() {
     $('.slider').slick({
-      slidesToShow: 3,
+      slidesToShow: 3, //表示数
       slidesToScroll: 1,
       dots: true,
-      autoplay: true,
+      autoplay: true, //自動再生
       autoplaySpeed: 2000
     });
 });
 
-$(document).on('turbolinks:load', function() { //slick機能
-    $('.slider').slick({
-    responsive: [
-        {
-      breakpoint: 768,  //ブレイクポイントを指定
-      settings: {
-        slidesToShow: 1,
-      }},{
-      breakpoint: 425,
-      settings: {
-        slidesToShow: 1,
-      }},]
- });
-});
+//slick機能テスト
+// $(document).on('turbolinks:load', function() {
+//     $('.slider').slick({
+//     responsive: [
+//         {
+//       breakpoint: 768,  //ブレイクポイントを指定
+//       settings: {
+//         slidesToShow: 1,
+//       }},{
+//       breakpoint: 425,
+//       settings: {
+//         slidesToShow: 1,
+//       }},]
+//  });
+// });
 
+//クリップボード
 function copyToClipboard() {
     // コピー対象をJavaScript上で変数として定義する
     var copyTarget = document.getElementById("copyTarget");

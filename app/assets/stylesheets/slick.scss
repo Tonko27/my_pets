@@ -15,7 +15,7 @@
 // }
 
 
-
+//slick機能
 .slider-box {
   max-width: 100%;
   margin: 0 auto;
@@ -33,6 +33,7 @@
   margin-right: auto;
 }
 
+//レスポンシブ425px, 767pxではslick非表示
 @media screen and (max-width:425px) {
   .slider-box {
   display: none;
