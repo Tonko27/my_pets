@@ -9,7 +9,7 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     @pet.customer_id = current_customer.id
     if @pet.save
-    redirect_to pet_path(@pet.id)
+    redirect_to pet_path(@pet.id), notice: "ペットが投稿されました。"
     else
       render :new
     end
@@ -42,7 +42,7 @@ class PetsController < ApplicationController
   def destroy
     pet = Pet.find(params[:id])
     pet.destroy
-    redirect_to pets_path
+    redirect_to pets_path, notice: "投稿を削除しました。"
   end
 
   def search

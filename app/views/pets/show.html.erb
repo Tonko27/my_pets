@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="col-lg-8 col-md-12 col-sm-12 col-12">
-        <table class="table table-borderless pet-profile-table">
+        <table class="table table-borderless pet-profile-table table-responsive-sm">
           <tr>
             <th>投稿者</th>
             <td><%= link_to @pet.customer.name, customer_path(@pet.customer.id) %></td>
@@ -48,13 +48,13 @@
       </div>
     </div>
   </div>
-  <div class="row m-5"><!--コメント入力フォーム-->
-    <div class="card" id="comment_form_area"><!--エラーメッセージ表示のためフォームを更新-->
+  <div class="row comment-area"><!--コメント入力フォーム-->
+    <div class="card w-100" id="comment_form_area"><!--エラーメッセージ表示のためフォームを更新-->
       <%= render "pet_comments/comment_form", pet: @pet, pet_comment: @pet_comment %>
     </div>
   </div>
-  <div class="row m-5">
-    <div class="card">
+  <div class="row comment-area">
+    <div class="card w-100">
       <div id="pet_<%= @pet.id %>"><!--非同期通信（コメント表示、コメント数）-->
     </div>
     <div class="pet_comments">
