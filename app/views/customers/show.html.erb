@@ -1,3 +1,5 @@
+<% @page_title = '投稿者ページ' %>
+
 <div class="container">
   <div class="row card w-100">
     <table class="table table-borderless">
@@ -8,8 +10,7 @@
         </tr>
         <tr>
           <th scope="row">メールアドレス</th>
-          <td>
-          <!-- コピー対象要素とコピーボタン -->
+          <td><!-- コピー対象要素とコピーボタン -->
             <input id="copyTarget" type="text" value="<%= @customer.email %>" readonly>
             <button class="far fa-clipboard faa-horizontal animated-hover", onclick="copyToClipboard()"></button>
           </td>
@@ -45,7 +46,6 @@
       </tbody>
     </table>
   </div>
-<% @page_title = '投稿者ページ' %>
 <% if @customer.id == current_customer.id %>
   <div class="top-box mt-5">
     <span>
@@ -57,12 +57,12 @@
       <%= link_to  new_pet_path do %>
         <i class="fas fa-paw faa-float animated-hover fa-2x top-btn">ペット登録</i>
       <% end %>
-      </span>
+    </span>
     <span>
       <%= link_to  pets_path(page_set: "my_pet") do %>
         <i class="fas fa-paw faa-float animated-hover fa-2x top-btn">マイペット</i>
       <% end %>
-      </span>
+    </span>
   </div>
 <% end %>
 </div>

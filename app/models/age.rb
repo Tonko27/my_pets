@@ -1,4 +1,5 @@
 class Age < ActiveHash::Base
+  # Active hashによる疑似モデル
   self.data = [
     { id: 1, name: '1 才' }, { id: 2, name: '2 才' }, { id: 3, name: '3 才' },
     { id: 4, name: '4 才' }, { id: 5, name: '5 才' }, { id: 6, name: '6 才' },
