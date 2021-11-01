@@ -11,7 +11,7 @@ class Pet < ApplicationRecord
   has_many :pet_comments, dependent: :destroy # コメント機能
   has_many :favorites, dependent: :destroy # お気に入り機能
 
-  validates :image, presence: true
+  validates :image, presence: true # バリデーション、空欄入力禁止
   validates :gender_id, presence: true
   validates :category_id, presence: true
   validates :breed, presence: true
