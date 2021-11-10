@@ -4,7 +4,7 @@
 <div class="card">
   <div class="card-body">
     <div class="card-title">
-      <%= link_to pet_comment.customer.name, customer_path(pet_comment.customer) %>
+      <%= link_to pet_comment.customer.nickname, customer_path(pet_comment.customer) %>
       <% if pet_comment.customer == current_customer %><!--コメント投稿者の場合、コメント削除表示-->
         <%= link_to pet_pet_comment_path(pet_comment.pet, pet_comment), method: :delete, data: { confirm: "コメントを削除しますか?" }, remote: true do %>
           <i class="fas fa-trash faa-horizontal animated-hover delete-btn" >削除</i>

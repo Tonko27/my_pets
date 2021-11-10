@@ -19,7 +19,7 @@
         <table class="table table-borderless pet-profile-table table-responsive-sm">
           <tr>
             <th>投稿者</th>
-            <td><%= link_to @pet.customer.name, customer_path(@pet.customer.id) %></td>
+            <td><%= link_to @pet.customer.nickname, customer_path(@pet.customer.id) %></td>
           </tr>
           <tr>
             <th>性別</th>

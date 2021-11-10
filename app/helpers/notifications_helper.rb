@@ -1,7 +1,7 @@
 module NotificationsHelper
   def notification_form(notification)
     @pet_comment = nil
-    visitor = link_to notification.visitor.name, notification.visitor, style: 'font-weight: bold;'
+    visitor = link_to notification.visitor.nickname, notification.visitor, style: 'font-weight: bold;'
     your_pet = link_to 'あなたの投稿', notification.pet, style: 'font-weight: bold;'
     case notification.action
     when 'follow'
