@@ -6,7 +6,7 @@
     <div class="navbar-outline">
       <ul>
         <% if customer_signed_in? %>
-          <li class="nav-link">ログイン中<br><%= current_customer.name %></li>
+          <li class="nav-link">ログイン中<br><%= current_customer.nickname %></li>
           <li class="nav-link"><%= link_to 'トップページ', root_path, class:"fas fa-paw nav-link faa-vertical animated-hover" %></li>
           <li class="nav-link"><%= link_to 'マイページ', customer_path(current_customer.id), class:"fas fa-paw nav-link faa-vertical animated-hover" %></li>
           <li class="nav-link"><%= link_to 'ペット一覧', pets_path, class:"fas fa-paw nav-link faa-vertical animated-hover" %></li>
