@@ -34,61 +34,6 @@ describe '[STEP1] 会員のテスト' do
     end
   end
 
-  # describe 'ヘッダーのテスト: ログインしていない場合' do
-  #   before do
-  #     visit root_path
-  #   end
-
-  #   context '表示内容の確認' do
-  #     it 'Homeリンクが表示される' do
-  #       home_link = find_all('a')[1].native.inner_text
-  #       expect(home_link).to match(/home/i)
-  #     end
-  #     it 'Aboutリンクが表示される' do
-  #       about_link = find_all('a')[2].native.inner_text
-  #       expect(about_link).to match(/about/i)
-  #     end
-  #     it 'sign upリンクが表示される' do
-  #       signup_link = find_all('a')[3].native.inner_text
-  #       expect(signup_link).to match(/sign up/i)
-  #     end
-  #     it 'loginリンクが表示される' do
-  #       login_link = find_all('a')[4].native.inner_text
-  #       expect(login_link).to match(/login/i)
-  #     end
-  #   end
-
-#     context 'リンクの内容を確認' do
-#       subject { current_path }
-
-#       it 'Homeを押すと、トップ画面に遷移する' do
-#         home_link = find_all('a')[1].native.inner_text
-#         home_link = home_link.delete(' ')
-#         home_link.gsub!(/\n/, '')
-#         click_link home_link
-#         is_expected.to eq '/'
-#       end
-#       it 'Aboutを押すと、アバウト画面に遷移する' do
-#         about_link = find_all('a')[2].native.inner_text
-#         about_link = about_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
-#         click_link about_link
-#         is_expected.to eq '/home/about'
-#       end
-#       it 'sign upを押すと、新規登録画面に遷移する' do
-#         signup_link = find_all('a')[3].native.inner_text
-#         signup_link = signup_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
-#         click_link signup_link
-#         is_expected.to eq '/customers/sign_up'
-#       end
-#       it 'loginを押すと、ログイン画面に遷移する' do
-#         login_link = find_all('a')[4].native.inner_text
-#         login_link = login_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
-#         click_link login_link
-#         is_expected.to eq '/customers/sign_in'
-#       end
-#     end
-#   end
-
   describe 'ユーザ新規登録のテスト' do
     before do
       visit new_customer_registration_path
@@ -114,27 +59,33 @@ describe '[STEP1] 会員のテスト' do
         expect(page).to have_field 'customer[password_confirmation]'
       end
       it '新規登録ボタンが表示される' do
-        expect(page).to have_button '新規登録'
+        expect(page).to have_button '登録'
       end
     end
 
-#     context '新規登録成功のテスト' do
-#       before do
-#         fill_in 'customer[name]', with: "pet1"
-#         fill_in 'customer[email]', with: "pet@1"
-#         fill_in 'customer[password]', with: 'mypets'
-#         fill_in 'customer[password_confirmation]', with: 'mypets'
-#       end
+    context '新規登録成功のテスト' do
+      before do
+        fill_in 'customer[name]', with: "test1"
+        fill_in 'customer[nickname]', with: "test1"
+        fill_in 'customer[email]', with: "pet@test"
+        fill_in 'customer[postalcode]', with: "123-4567"
+        select '北海道', from: 'customer[prefecture_id]'
+        fill_in 'customer[city]', with: "test"
+        fill_in 'customer[building]', with: "test"
+        fill_in 'customer[phone]', with: "123-456-789"
+        fill_in 'customer[password]', with: 'mypets'
+        fill_in 'customer[password_confirmation]', with: 'mypets'
+      end
 
-#       it '正しく新規登録される' do
-#         expect { click_button '新規登録' }.to change(customer.all, :count).by(1)
-#       end
-#       it '新規登録後のリダイレクト先が、新規登録できたユーザの詳細画面になっている' do
-#         click_button '新規登録'
-#         expect(current_path).to eq '/customer/' + Customer.last.id.to_s
-#       end
-#     end
-#   end
+      it '正しく新規登録される' do
+        expect { click_button '登録' }.to change(Customer.all, :count).by(1)
+      end
+      it '新規登録後のリダイレクト先が、新規登録できたユーザの詳細画面になっている' do
+        click_button '登録'
+        expect(current_path).to eq '/'
+      end
+    end
+  end
 
 #   describe 'ユーザログイン' do
 #     let(:customer) { create(:customer) }
