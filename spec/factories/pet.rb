@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :pet do
-    #image_id { 'pets_test' }
+    image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/cat.jpg')) }
     gender_id { '1' }
     category_id { '1' }
     breed { '1' }

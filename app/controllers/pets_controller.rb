@@ -2,6 +2,7 @@ class PetsController < ApplicationController
   before_action :set_q, only: %i[index search]
 
   def new
+
     @pet = Pet.new
   end
 

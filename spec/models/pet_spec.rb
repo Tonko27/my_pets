@@ -7,12 +7,12 @@ RSpec.describe 'Petモデルのテスト', type: :model do
     let(:customer) { create(:customer) }
     let!(:pet) { build(:pet, customer_id: customer.id) }
 
-    # context '画像カラム' do
-    #   it '空欄でないこと' do
-    #     pet.image_id = ''
-    #     is_expected.to eq false
-    #   end
-    # end
+    context '画像カラム' do
+      it '空欄でないこと' do
+        pet.image_id = ''
+        is_expected.to eq false
+      end
+    end
 
     context '性別カラム' do
       it '空欄でないこと' do
