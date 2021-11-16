@@ -80,119 +80,83 @@ describe '[STEP1] 会員のテスト' do
       it '正しく新規登録される' do
         expect { click_button '登録' }.to change(Customer.all, :count).by(1)
       end
-      it '新規登録後のリダイレクト先が、新規登録できたユーザの詳細画面になっている' do
+      it '新規登録後のリダイレクト先が、トップ画面になっている' do
         click_button '登録'
         expect(current_path).to eq '/'
       end
     end
   end
 
-#   describe 'ユーザログイン' do
-#     let(:customer) { create(:customer) }
+  describe 'ユーザログイン' do
+    let(:customer) { create(:customer) }
 
-#     before do
-#       visit new_customer_session_path
-#     end
+    before do
+      visit new_customer_session_path
+    end
 
-#     context '表示内容の確認' do
-#       it 'URLが正しい' do
-#         expect(current_path).to eq '/customers/sign_in'
-#       end
-#       it '「ログイン」と表示される' do
-#         expect(page).to have_content 'ログイン'
-#       end
-#       it 'emailフォームが表示される' do
-#         expect(page).to have_field 'customer[email]'
-#       end
-#       it 'passwordフォームが表示される' do
-#         expect(page).to have_field 'customer[password]'
-#       end
-#       it '登録ボタンが表示される' do
-#         expect(page).to have_button '登録'
-#       end
-#       it 'emailフォームは表示されない' do
-#         expect(page).not_to have_field 'customer[email]'
-#       end
-#     end
+    context '表示内容の確認' do
+      it 'URLが正しい' do
+        expect(current_path).to eq '/customers/sign_in'
+      end
+      it '「ログイン」と表示される' do
+        expect(page).to have_content 'ログイン'
+      end
+      it 'emailフォームが表示される' do
+        expect(page).to have_field 'customer[email]'
+      end
+      it 'passwordフォームが表示される' do
+        expect(page).to have_field 'customer[password]'
+      end
+      it 'ログインボタンが表示される' do
+        expect(page).to have_button 'ログイン'
+      end
+    end
 
-#     context 'ログイン成功のテスト' do
-#       before do
-#         fill_in 'customer[name]', with: customer.name
-#         fill_in 'customer[password]', with: customer.password
-#         click_button 'ログイン'
-#       end
+    context 'ログイン成功のテスト' do
+      before do
+        fill_in 'customer[email]', with: customer.email
+        fill_in 'customer[password]', with: customer.password
+        click_button 'ログイン'
+      end
 
-#       it 'ログイン後のリダイレクト先が、ログインしたユーザの詳細画面になっている' do
-#         expect(current_path).to eq '/customer/' + customer.id.to_s
-#       end
-#     end
+      it 'ログイン後のリダイレクト先が、ログインしたトップ画面になっている' do
+        expect(current_path).to eq '/'
+      end
+    end
 
-#     context 'ログイン失敗のテスト' do
-#       before do
-#         fill_in 'customer[email]', with: ''
-#         fill_in 'customer[password]', with: ''
-#         click_button 'ログイン'
-#       end
+    context 'ログイン失敗のテスト' do
+      before do
+        fill_in 'customer[email]', with: ''
+        fill_in 'customer[password]', with: ''
+        click_button 'ログイン'
+      end
 
-#       it 'ログインに失敗し、ログイン画面にリダイレクトされる' do
-#         expect(current_path).to eq '/customers/sign_in'
-#       end
-#     end
-#   end
+      it 'ログインに失敗し、ログイン画面にリダイレクトされる' do
+        expect(current_path).to eq '/customers/sign_in'
+      end
+    end
+  end
 
-#   describe 'ヘッダーのテスト: ログインしている場合' do
-#     let(:customer) { create(:customer) }
+  describe 'ユーザログアウトのテスト' do
+    let(:customer) { create(:customer) }
 
-#     before do
-#       visit new_user_session_path
-#       fill_in 'customer[name]', with: customer.name
-#       fill_in 'customer[password]', with: customer.password
-#       click_button 'ログイン'
-#     end
+    before do
+      visit new_customer_session_path
+      fill_in 'customer[email]', with: customer.email
+      fill_in 'customer[password]', with: customer.password
+      click_button 'ログイン'
+      logout_link = find_all('a')[5].native.inner_text
+      logout_link = logout_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
+      click_link logout_link, match: :first
+    end
 
-#     context 'ヘッダーの表示を確認' do
-#       it 'タイトルが表示される' do
-#         expect(page).to have_content 'my_pets'
-#       end
-#       it 'Homeリンクが表示される' do
-#         home_link = find_all('a')[1].native.inner_text
-#         expect(home_link).to match(/home/i)
-#       end
-#       it 'Usersリンクが表示される' do
-#         users_link = find_all('a')[2].native.inner_text
-#         expect(users_link).to match(/users/i)
-#       end
-#       it 'Booksリンクが表示される' do
-#         books_link = find_all('a')[3].native.inner_text
-#         expect(books_link).to match(/books/i)
-#       end
-#       it 'log outリンクが表示される' do
-#         logout_link = find_all('a')[4].native.inner_text
-#         expect(logout_link).to match(/logout/i)
-#       end
-#     end
-#   end
-
-#   describe 'ユーザログアウトのテスト' do
-#     let(:customer) { create(:customer) }
-
-#     before do
-#       visit new_customer_session_path
-#       fill_in 'customer[name]', with: customer.name
-#       fill_in 'customer[password]', with: customer.password
-#       click_button 'ログイン'
-#       logout_link = find_all('a')[4].native.inner_text
-#       logout_link = logout_link.gsub(/\n/, '').gsub(/\A\s*/, '').gsub(/\s*\Z/, '')
-#       click_link logout_link
-#     end
-
-#     context 'ログアウト機能のテスト' do
-#       it '正しくログアウトできている: ログアウト後のリダイレクト先においてAbout画面へのリンクが存在する' do
-#         expect(page).to have_link '', href: '/home/about'
-#       end
-#       it 'ログアウト後のリダイレクト先が、トップになっている' do
-#         expect(current_path).to eq '/'
-#       end
-#     end
-#   end
+    context 'ログアウト機能のテスト' do
+      it '正しくログアウトできている: ログアウト後のリダイレクト先においてAbout画面へのリンクが存在する' do
+        expect(page).to have_link '', href: '/about'
+      end
+      it 'ログアウト後のリダイレクト先が、トップになっている' do
+        expect(current_path).to eq '/'
+      end
+    end
+  end
  end
