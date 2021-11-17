@@ -38,16 +38,19 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # リーダブルコードテスト
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
 end
 
 group :test do
@@ -56,32 +59,36 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  # RSpec
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem 'devise'#ユーザー認証機能
+gem 'devise' # ユーザー認証機能
 
-gem 'active_hash'#疑似モデル作成
-gem 'haml-rails'#疑似モデル作成
+gem 'active_hash' # 疑似モデル作成
+gem 'haml-rails' # 疑似モデル作成
 
-gem "refile", require: "refile/rails", github: 'manfe/refile'#画像投稿
-gem "refile-mini_magick"#画像加工
+gem 'refile', require: 'refile/rails', github: 'manfe/refile' # 画像投稿
+gem 'refile-mini_magick' # 画像加工
 
-gem 'bootstrap', '~> 4.5'#レイアウト変更
-gem 'jquery-rails'#レイアウト、非同期通信
-gem 'font-awesome-sass', '~> 5.13'#アイコン表示
+gem 'bootstrap', '~> 4.5' # レイアウト変更
+gem 'font-awesome-sass', '~> 5.13' # アイコン表示
+gem 'jquery-rails' # レイアウト、非同期通信
 
-gem 'kaminari','~> 1.2.1'#ページング
+gem 'kaminari', '~> 1.2.1' # ページング
 
-gem 'ransack'#検索機能
+gem 'ransack' # 検索機能
 
-gem 'rails-i18n', '~> 5.1'#devise日本語化
+gem 'rails-i18n', '~> 5.1' # devise日本語化
 
-gem 'devise-i18n'#devise日本語化
+gem 'devise-i18n' # devise日本語化
 
-gem 'dotenv-rails'#MySQL使用
+gem 'dotenv-rails' # MySQL使用
 group :production do
   gem 'mysql2'
 end

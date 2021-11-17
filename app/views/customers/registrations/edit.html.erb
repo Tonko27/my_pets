@@ -1,75 +1,74 @@
 <% @page_title = 'プロフィール編集' %>
+
 <div class="container">
   <div class="row card w-100">
     <h2 class="card-body">プロフィール編集</h2>
-    </div>
-    <div class="row card w-100">
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-        <table class="table table-borderless">
-          <tbody>
-            <tr>
-              <th scope="row" style="width: 40%"><%= f.label :ニックネーム %></th>
-              <td><%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %></td>
-            </tr>
-            <tr>
-              <th scope="row"><%= f.label :氏名 %></th>
-              <td><%= f.text_field :name, autofocus: true, autocomplete: "name" %></td>
-            </tr>
-            <tr>
-              <th scope="row">
-                <%= f.label :メールアドレス %>
-                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                  <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-                <% end %>
-              </th>
-              <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
-            </tr>
-            <tr>
-              <th scope="row">
-                <%= f.label :新しいパスワード %><br>
-                <i>(変更がない場合は現在のパスワードを入力してください)</i>
-                <% if @minimum_password_length %>
-                <em><%= @minimum_password_length %> 文字以上</em>
-                <% end %>
-              </th>
-              <td><%= f.password_field :password, autocomplete: "new-password" %></td>
-            </tr>
-            <tr>
-              <th scope="row">
-                <%= f.label :現在のパスワード %><br>
-                <i>(確認の為パスワードを入力してください)</i>
-              </th>
-              <td><%= f.password_field :current_password, autocomplete: "current-password" %></td>
-            </tr>
-            <tr>
-              <th scope="row"><%= f.label :郵便番号 %></th>
-              <td><%= f.text_field :postalcode, autofocus: true %></td>
-            </tr>
-            <tr>
-              <th scope="row"><%= f.label :都道府県 %></th>
-              <td><%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "---"}, {class: ""} %></td>
-            </tr>
-            <tr>
-              <th scope="row"><%= f.label :市町村 %></th>
-              <td><%= f.text_field :city, autofocus: true %></td>
-            </tr>
-            <tr>
-              <th scope="row"> <%= f.label :建物 %></th>
-              <td><%= f.text_field :building, autofocus: true %></td>
-            </tr>
-            <tr>
-              <th scope="row"><%= f.label :電話番号 %></th>
-              <td><%= f.text_field :phone, autofocus: true %></td>
-            </tr>
-          </tbody>
-        </table>
-          <%= f.submit "変更", class: 'btn btn-light btn' %>
-        <% end %>
-      <div class="card-body">
-        <h3>退会</h3>
-        <p>退会を行います <%= button_to "退会", registration_path(resource_name), data: { confirm: "本当に退会しますか?" }, method: :delete, class: 'btn btn-light btn' %></p>
-          <%= link_to "戻る", :back %>
-      </div>
+  </div>
+  <div class="row card w-100">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %> <!--devise エラーメッセージ-->
+      <table class="table table-borderless">
+        <tr>
+          <th scope="row" style="width: 40%"><%= f.label :ニックネーム %></th>
+          <td><%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= f.label :氏名 %></th>
+          <td><%= f.text_field :name, autofocus: true, autocomplete: "name" %></td>
+        </tr>
+        <tr>
+          <th scope="row">
+            <%= f.label :メールアドレス %>
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+            <% end %>
+          </th>
+          <td><%= f.email_field :email, autofocus: true, autocomplete: "email" %></td>
+        </tr>
+        <tr>
+          <th scope="row">
+            <%= f.label :新しいパスワード %><br>
+            <i>(変更がない場合は現在のパスワードを入力してください)</i>
+            <% if @minimum_password_length %>
+            <em><%= @minimum_password_length %> 文字以上</em>
+            <% end %>
+          </th>
+          <td><%= f.password_field :password, autocomplete: "new-password" %></td>
+        </tr>
+        <tr>
+          <th scope="row">
+            <%= f.label :現在のパスワード %><br>
+            <i>(確認の為パスワードを入力してください)</i>
+          </th>
+          <td><%= f.password_field :current_password, autocomplete: "current-password" %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= f.label :郵便番号 %></th>
+          <td><%= f.text_field :postalcode, autofocus: true %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= f.label :都道府県 %></th>
+          <td><%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "---"}, {class: ""} %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= f.label :市町村 %></th>
+          <td><%= f.text_field :city, autofocus: true %></td>
+        </tr>
+        <tr>
+          <th scope="row"> <%= f.label :建物 %></th>
+          <td><%= f.text_field :building, autofocus: true %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= f.label :電話番号 %></th>
+          <td><%= f.text_field :phone, autofocus: true %></td>
+        </tr>
+      </table>
+    <%= f.submit "変更", class: 'btn btn-light btn' %>
+    <% end %>
+    <div class="card-body">
+      <h3>退会</h3>
+      <p>退会を行います <%= button_to "退会", registration_path(resource_name), data: { confirm: "本当に退会しますか?" }, method: :delete, class: 'btn btn-light btn' %></p>
+      <%= link_to "戻る", :back %>
     </div>
   </div>
+</div>
