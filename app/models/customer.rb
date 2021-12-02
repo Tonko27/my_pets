@@ -14,11 +14,13 @@ class Customer < ApplicationRecord
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy # 通知機能
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
-  validates :email, presence: true
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i # メールアドレスのフォーマット正規表現
+
+  validates :email, {presence: true, format: { with: VALID_EMAIL_REGEX }}
   validates :password, presence: true
   validates :nickname, presence: true
   validates :name, presence: true
-  validates :postalcode, presence: true
+  validates :postalcode, presence: true, length: { minimum: 7, maximum: 7 }
   validates :prefecture_id, presence: true
-  validates :phone, presence: true
+  validates :phone, presence: true, length: { minimum: 10, maximum: 11 }
 end
