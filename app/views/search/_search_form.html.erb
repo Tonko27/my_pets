@@ -7,7 +7,8 @@
         <%= f.label :category_id, :"カテゴリー：" %>
         <%= f.collection_select :category_id_eq, Category.where.not(id: 0), :id, :name, {include_blank: '--'}, {prompt: false, class: 'form-control'} %>
         <%= f.label :age_id, :"年齢：" %>
-        <%= f.collection_select :age_id_eq, Age.where.not(id: 0), :id, :name, {include_blank: '--'}, {prompt: false, class: 'form-control'} %>
+        <%= f.collection_select :age_id_gteq, Age.where.not(id: 0), :id, :name, {include_blank: '--'}, {prompt: false, class: 'form-control'} %>から
+        <%= f.collection_select :age_id_lteq, Age.where.not(id: 0), :id, :name, {include_blank: '--'}, {prompt: false, class: 'form-control'} %>まで
         <%= f.label :breed, :"品種：" %>
         <%= f.search_field :breed_cont, class: 'form-control' %>
         <%= f.submit '検索', class: 'btn btn-light btn' %>
