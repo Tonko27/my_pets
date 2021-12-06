@@ -1,7 +1,7 @@
-<div class="card w-100">
-  <div class="card-body">
+<div class="search_field">
+  <div class="search_field2">
     <%= search_form_for q, url: pets_search_path do |f| %>
-      <div class="input-group">
+      <div class="search_form">
         <%= f.label :gender_id, :"性別：" %>
         <%= f.collection_select :gender_id_eq, Gender.where.not(id: 0), :id, :name, {include_blank: '--'}, {prompt: false, class: 'form-control'} %>
         <%= f.label :category_id, :"カテゴリー：" %>
