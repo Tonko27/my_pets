@@ -1,0 +1,36 @@
+//検索フォーム背景サイズ
+.search_field {
+  background-image: image-url("wood.jpg");
+  box-shadow: 0 10px 25px 0 black;
+  padding: 10px;
+  width: 100%;
+  height: 200px;
+  table-layout: fixed;
+  margin: 15px auto;
+}
+
+//検索フォームサイズ
+.search_field2, {
+  background-image: image-url("paper.jpg");
+  background-size: 3000px 2000px;
+  background-position: center;
+  border-radius: 1%;
+  box-shadow: 0 10px 25px 0 black;
+  height: 150px;
+}
+
+//検索フォームサイズ
+.search_form {
+  display: block;
+  width: 100%;
+
+}
+
+//検索フォーム
+search {
+  color: #FFF;
+  background: #795548;
+  border-bottom: solid 6px #4b2c20;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+}
