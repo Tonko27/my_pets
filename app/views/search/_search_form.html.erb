@@ -1,18 +1,16 @@
 <div class="search_field">
   <div class="search_field2">
     <%= search_form_for q, url: pets_search_path do |f| %>
-      <div class="search_form">
         <%= f.label :gender_id, :"性別：" %>
-        <%= f.collection_select :gender_id_eq, Gender.where.not(id: 0), :id, :name, {include_blank: '--'}, {prompt: false, class: 'form-control'} %>
+        <%= f.collection_select :gender_id_eq, Gender.where.not(id: 0), :id, :name, {include_blank: '--'}, {prompt: false, class: 'search_gender'} %>
         <%= f.label :category_id, :"カテゴリー：" %>
-        <%= f.collection_select :category_id_eq, Category.where.not(id: 0), :id, :name, {include_blank: '--'}, {prompt: false, class: 'form-control'} %>
+        <%= f.collection_select :category_id_eq, Category.where.not(id: 0), :id, :name, {include_blank: '--'}, {prompt: false, class: 'search_category'} %>
         <%= f.label :age_id, :"年齢：" %>
-        <%= f.collection_select :age_id_gteq, Age.where.not(id: 0), :id, :name, {include_blank: '--'}, {prompt: false, class: 'form-control'} %>から
-        <%= f.collection_select :age_id_lteq, Age.where.not(id: 0), :id, :name, {include_blank: '--'}, {prompt: false, class: 'form-control'} %>まで
+        <%= f.collection_select :age_id_gteq, Age.where.not(id: 0), :id, :name, {include_blank: '--'}, {prompt: false, class: 'age_from'} %>から
+        <%= f.collection_select :age_id_lteq, Age.where.not(id: 0), :id, :name, {include_blank: '--'}, {prompt: false, class: 'age_until'} %>まで<br>
         <%= f.label :breed, :"品種：" %>
-        <%= f.search_field :breed_cont, class: 'form-control' %>
-        <%= f.submit '検索', class: 'btn btn-light btn' %>
-      </div>
+        <%= f.search_field :breed_cont, class: 'search_breed' %>
+        <%= f.submit '検索', class: 'btn btn-light search_btn' %>
     <% end %>
   </div>
 </div>
