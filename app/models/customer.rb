@@ -16,7 +16,7 @@ class Customer < ApplicationRecord
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i # メールアドレスのフォーマット正規表現
 
-  validates :email, {presence: true, format: { with: VALID_EMAIL_REGEX }}
+  validates :email, { presence: true, format: { with: VALID_EMAIL_REGEX } }
   validates :password, presence: true
   validates :nickname, presence: true
   validates :name, presence: true
