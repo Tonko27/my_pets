@@ -11,13 +11,13 @@ describe '[STEP1] 会員のテスト' do
         expect(current_path).to eq '/'
       end
       it 'トップ画面(root_path)にペット一覧へのリンクが表示されているか' do
-        expect(page).to have_link "ペット閲覧"
+        expect(page).to have_link 'ペット閲覧'
       end
       it 'トップ画面(root_path)に新規登録へのリンクが表示されているか' do
-        expect(page).to have_link "新規登録"
+        expect(page).to have_link '新規登録'
       end
       it 'トップ画面(root_path)にログインへのリンクが表示されているか' do
-        expect(page).to have_link "ログイン"
+        expect(page).to have_link 'ログイン'
       end
     end
   end
@@ -65,14 +65,14 @@ describe '[STEP1] 会員のテスト' do
 
     context '新規登録成功のテスト' do
       before do
-        fill_in 'customer[name]', with: "test1"
-        fill_in 'customer[nickname]', with: "test1"
-        fill_in 'customer[email]', with: "pet@test"
-        fill_in 'customer[postalcode]', with: "123-4567"
+        fill_in 'customer[name]', with: 'test1'
+        fill_in 'customer[nickname]', with: 'test1'
+        fill_in 'customer[email]', with: 'pet@test'
+        fill_in 'customer[postalcode]', with: '123-4567'
         select '北海道', from: 'customer[prefecture_id]'
-        fill_in 'customer[city]', with: "test"
-        fill_in 'customer[building]', with: "test"
-        fill_in 'customer[phone]', with: "123-456-789"
+        fill_in 'customer[city]', with: 'test'
+        fill_in 'customer[building]', with: 'test'
+        fill_in 'customer[phone]', with: '123-456-789'
         fill_in 'customer[password]', with: 'mypets'
         fill_in 'customer[password_confirmation]', with: 'mypets'
       end
@@ -159,4 +159,4 @@ describe '[STEP1] 会員のテスト' do
       end
     end
   end
- end
+end

@@ -1,0 +1,5 @@
+inherit_from: .rubocop_todo.yml
+
+Metrics/AbcSize:
+  Exclude:
+    - '20211010065212_devise_create_customers.rb'

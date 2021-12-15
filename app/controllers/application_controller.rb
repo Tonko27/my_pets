@@ -9,11 +9,11 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     # devise新規登録データの許可
     devise_parameter_sanitizer.permit(:sign_up,
-    keys: %i[nickname name email encrypted_password postalcode prefecture_id city
-             building phone is_deleted])
+                                      keys: %i[nickname name email encrypted_password postalcode prefecture_id city
+                                               building phone is_deleted])
     # devise会員編集データの許可
     devise_parameter_sanitizer.permit(:account_update,
-    keys: %i[nickname name email encrypted_password postalcode prefecture_id city
-             building phone is_deleted])
+                                      keys: %i[nickname name email encrypted_password postalcode prefecture_id city
+                                               building phone is_deleted])
   end
 end

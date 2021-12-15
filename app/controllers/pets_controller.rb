@@ -2,7 +2,6 @@ class PetsController < ApplicationController
   before_action :set_q, only: %i[index search]
 
   def new
-
     @pet = Pet.new
   end
 
@@ -46,7 +45,7 @@ class PetsController < ApplicationController
     redirect_to pets_path, notice: '投稿を削除しました。'
   end
 
-# 検索機能
+  # 検索機能
   def search
     @results = @q.result.page(params[:page]).per(6).order('updated_at DESC') # ページング機能
   end
@@ -56,7 +55,8 @@ class PetsController < ApplicationController
   def pet_params # active_hash使用のため一部カラムは"_id"表示
     params.require(:pet).permit(:image, :gender_id, :category_id, :breed, :age_id, :character, :reason)
   end
-# 検索機能(ransack)
+
+  # 検索機能(ransack)
   def set_q
     @q = Pet.ransack(params[:q])
   end
