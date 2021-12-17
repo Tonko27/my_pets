@@ -1,5 +1,16 @@
 inherit_from: .rubocop_todo.yml
 
-Metrics/AbcSize:
+AllCops:
   Exclude:
-    - '20211010065212_devise_create_customers.rb'
+    - 'db/migrate/20211010065212_devise_create_customers.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'db/**/*'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'app/helpers/notifications_helper.rb'
+    - 'app/models/pet.rb'
+    - 'db/**/*'
