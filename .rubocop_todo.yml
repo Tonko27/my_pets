@@ -8,8 +8,8 @@
 
 # Offense count: 1
 # Configuration parameters: IgnoredMethods, CountRepeatedAttributes.
-#Metrics/AbcSize:
-  #Max: 20
+Metrics/AbcSize:
+  Max: 20
 
 # Offense count: 11
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
