@@ -14,6 +14,27 @@ class Customer < ApplicationRecord
   has_many :active_notifications, class_name: 'Notification', foreign_key: 'visitor_id', dependent: :destroy # 通知機能
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
+  # 自分がフォローされる（被フォロー）側の関係性
+  has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
+  # 自分がフォローする（与フォロー）側の関係性
+  has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+  # 被フォロー関係を通じて参照→自分をフォローしている人
+  has_many :followers, through: :reverse_of_relationships, source: :follower
+  # 与フォロー関係を通じて参照→自分がフォローしている人
+  has_many :followings, through: :relationships, source: :followed
+
+  def follow(customer_id)
+    relationships.create(followed_id: customer_id)
+  end
+
+  def unfollow(customer_id)
+    relationships.find_by(followed_id: customer_id).destroy
+  end
+
+  def following?(customer)
+    followings.include?(customer)
+  end
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i # メールアドレスのフォーマット正規表現
 
   validates :email, { presence: true, format: { with: VALID_EMAIL_REGEX } }
